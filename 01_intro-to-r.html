@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Intro to R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Bjorn" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <script src="libs/xaringanExtra-progressBar-0.0.1/progress-bar.js"></script>
+    <script src="libs/freezeframe-5.0.2/freezeframe.min.js"></script>
+    <script src="libs/xaringanExtra-freezeframe-0.0.1/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <link rel="stylesheet" href="assets/css/leiden.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/leiden-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle, title-slide, inverse
+
+.title-left[
+# Intro to R
+
+### Part 2: R Objects
+
+#### QuantArch Week 1 | 07-02-2022
+]
+
+---
+layout: true
+class: middle, left
+&lt;div class='footer'&gt;
+&lt;span&gt;Discover the world or something like that...&lt;/span&gt;
+&lt;img src='assets/img/logo.png' width=82 /&gt;
+&lt;/div&gt;
+---
+class: inverse
+
+<style>.xe__progress-bar__container {
+  top:0;
+  opacity: 1;
+  position:absolute;
+  right:0;
+  left: 0;
+}
+.xe__progress-bar {
+  height: 0.25em;
+  background-color: #2c712d;
+  width: calc(var(--slide-current) / var(--slide-total) * 100%);
+}
+.remark-visible .xe__progress-bar {
+  animation: xe__progress-bar__wipe 200ms forwards;
+  animation-timing-function: cubic-bezier(.86,0,.07,1);
+}
+@keyframes xe__progress-bar__wipe {
+  0% { width: calc(var(--slide-previous) / var(--slide-total) * 100%); }
+  100% { width: calc(var(--slide-current) / var(--slide-total) * 100%); }
+}</style>
+
+## Functions, data structures, and data types in R
+
+---
+
+### Functions
+
+Usually containing a series of commands to automate a process.
+
+We have already been introduced to a couple of built-in R functions 
+
+- `rm()`
+- `print()`
+
+These performed specific **functions** when we gave them an object,
+
+i.e. remove or print the given object.
+
+---
+
+### Anatomy of a function
+
+A function can be called with the function name, and **input arguments** within 
+the brackets:
+
+`&gt; example_function(arg_1 = some_argument, arg_2 = some_other_argument)`
+
+--
+
+This will then provide some sort of output/result (if it worked...)
+
+You can save the output of a function to an object, 
+
+just like the calculations from before
+the break
+
+---
+class: middle
+
+### Anatomy of a function
+
+I wouldn't recommend looking inside a function...
+
+--
+
+
+```r
+median
+```
+
+
+```
+## function (x, na.rm = FALSE, ...) 
+## {
+##     if (is.factor(x) || is.data.frame(x)) 
+##         stop("need numeric data")
+##     if (length(names(x))) 
+##         names(x) &lt;- NULL
+##     if (na.rm) 
+##         x &lt;- x[!is.na(x)]
+##     else if (any(is.na(x))) 
+##         return(x[FALSE][NA])
+##     n &lt;- length(x)
+##     if (n == 0L) 
+##         return(x[FALSE][NA])
+##     half &lt;- (n + 1L)%/%2L
+##     if (n%%2L == 1L) 
+##         sort(x, partial = half)[half]
+##     else mean(sort(x, partial = half + 0L:1L)[half + 0L:1L])
+## }
+## &lt;bytecode: 0x5603e17732b8&gt;
+## &lt;environment: namespace:stats&gt;
+```
+
+---
+class: middle
+
+
+
+### Anatomy of a function
+
+I wouldn't recommend looking inside a function...
+
+.center[ ![](https://media.giphy.com/media/3ov9k8NUMhcBxDkY4E/giphy.gif?cid=ecf05e471wrxipxxszitjjcjixj0tsy9obqcsipi4uxh5uf4&amp;rid=giphy.gif&amp;ct=g) ]
+
+---
+class: middle
+
+### Example functions
+
+
+```r
+my_numbers &lt;- c(1:10) # start by creating a vector
+my_numbers
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10
+```
+
+--
+
+
+```r
+mean(x = my_numbers) # functions will often have obvious names...
+```
+
+```
+## [1] 5.5
+```
+
+--
+
+
+```r
+sum(x = my_numbers) # see what I mean?
+```
+
+```
+## [1] 55
+```
+
+--
+
+In these functions, the first argument (`x`) is a vector. As long as you put 
+arguments in the correct order, you don't need `x = `
+
+
+```r
+mean(my_numbers) # it assumes I mean x = my_numbers
+```
+
+```
+## [1] 5.5
+```
+
+---
+
+.pull-left[
+### Help
+
+&gt; *Help will always be given in R to those who ask for it.*
+
+&gt; Dumbledore (paraphrasing, again...)
+
+&lt;br&gt;
+
+To see which arguments a function requires
+
+or to get additional help for a function
+
+just type the name of the function preceded by `?`
+
+
+```r
+?mean
+```
+]
+
+--
+
+.pull-right[
+![](assets/img/mean-help.png)
+]
+
+---
+class: middle
+
+### Basic data structures in R
+
+| Data type | Explanation |
+|---|---|
+| vector/array | a series of values, which can be numeric, logical, or strings |
+| matrix | a table of the same type of values, e.g. all numeric |
+| data frame | a table with different types of values. Can combine strings and numbers |
+| list | a series of data types. Can combine vectors, matrices, and data frames |
+
+---
+class: middle
+
+### Data structures with examples
+
+
+
+**Vector**
+
+
+```r
+c(1, 2, 5.5, TRUE, "random string")
+```
+
+```
+## [1] "1"             "2"             "5.5"           "TRUE"         
+## [5] "random string"
+```
+
+--
+
+**Matrix** 😎
+
+
+```r
+matrix(1:12, nrow = 3)
+```
+
+```
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
+```
+
+---
+class: middle
+
+### Data types with examples, the sequel
+
+**Data frame**
+
+
+```r
+data.frame("names" = c("Arthur Dent", "Ford Prefect", "Trillian"), 
+           "occupation" = c("???", "Researcher", "Astrophysicist"),
+           "coolness" = c(3, 2, 1))
+```
+
+```
+##          names     occupation coolness
+## 1  Arthur Dent            ???        3
+## 2 Ford Prefect     Researcher        2
+## 3     Trillian Astrophysicist        1
+```
+
+---
+class: middle
+
+### Data types with examples, the sequel, part 2
+
+**List**
+
+
+```r
+# I cheated and stored the objects in advance (i.e. vect, m, datf)
+list("vector" = vect, "matrix" = m, "data_frame" = datf)
+```
+
+```
+## $vector
+## [1] "1"             "2"             "5.5"           "TRUE"         
+## [5] "random string"
+## 
+## $matrix
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
+## 
+## $data_frame
+##          names     occupation coolness
+## 1  Arthur Dent            ???        3
+## 2 Ford Prefect     Researcher        2
+## 3     Trillian Astrophysicist        1
+```
+
+---
+class: middle, inverse
+
+### Exercises
+
+#### Atomic R object types
+
+| typeof() | mode() |
+|----------|--------|
+| logical  | logical |
+| integer  | numeric |
+|  double  | numeric |
+| complex  | complex |
+| character| character |
+
+Here are some examples of predefined operators in R:
+
+`FALSE`, `NA`, `NaN`, `NULL`, `TRUE`
+
+Use the `typeof` and `mode` functions to determine what category these operators
+belong to.
+
+---
+class: middle, inverse
+
+### Exercises
+
+#### Solution
+
+
+
+| typeof() | mode() |
+|----------|--------|
+| logical  | logical |
+| integer  | numeric |
+|  double  | numeric |
+| complex  | complex |
+| character| character |
+
+`TRUE`, `FALSE`, `NA`: logical
+
+`NaN`: numeric, double
+
+`NULL`: NULL
+
+---
+class: middle, inverse
+
+## Exercises
+
+Create and store a vector with the values `1.5`, `FALSE`, `"universe"`, `NA`.
+
+Use the `length` function to compute the number of elements in the vector, 
+and use `typeof` to see the type of the created object.
+
+--
+
+### Solution
+
+
+```r
+my_vector &lt;- c(1.5, FALSE, "universe", NA)
+
+typeof(my_vector)
+```
+
+```
+## [1] "character"
+```
+
+A single vector can only contain one atomic object type, so it converted all
+elements to `"character"`.
+
+character &gt; double &gt; integer &gt; logical
+
+---
+class: middle
+
+### Vectors
+
+We're going to dive into vectors in a little more detail.
+
+There is a difference in vector definitions across the sciences.
+
+In computer science (most relevant here), it is a one-dimensional array that 
+we can use to store values/data.
+
+.center[ ![GIPHY](https://media.giphy.com/media/xThtalqfyXJRReaH2E/giphy.gif?cid=ecf05e472ocr6qfcug8xacyp1g0bsfizpjlubq7zib32efcu&amp;rid=giphy.gif&amp;ct=g) ]
+
+---
+class: middle
+
+In R, we create a vector using the `c` function.
+
+Let's create and print a vector with a series of values:
+
+
+```r
+artefacts &lt;- c("Sankara Stone", "Ark of the Covenant", "Holy Grail", "Crystal Skull", "Sankara Stone")
+artefacts
+```
+
+```
+## [1] "Sankara Stone"       "Ark of the Covenant" "Holy Grail"         
+## [4] "Crystal Skull"       "Sankara Stone"
+```
+
+--
+
+This will of course be a character vector with five elements.
+
+
+```r
+typeof(artefacts)
+```
+
+```
+## [1] "character"
+```
+
+```r
+length(artefacts)
+```
+
+```
+## [1] 5
+```
+
+---
+class: middle
+
+We can also create a logical vector:
+
+
+```r
+boolean &lt;- c(TRUE, TRUE, FALSE, TRUE)
+boolean
+```
+
+```
+## [1]  TRUE  TRUE FALSE  TRUE
+```
+
+--
+
+
+```r
+typeof(boolean)
+```
+
+```
+## [1] "logical"
+```
+
+```r
+length(boolean)
+```
+
+```
+## [1] 4
+```
+
+This is also known as a 'Boolean' vector (and is great for indexing).
+
+---
+class: middle
+
+What happens if we convert this to a numeric vector and a character vector?
+
+--
+
+
+```r
+as.numeric(boolean)
+```
+
+```
+## [1] 1 1 0 1
+```
+
+```r
+as.character(boolean)
+```
+
+```
+## [1] "TRUE"  "TRUE"  "FALSE" "TRUE"
+```
+
+--
+
+**Note:** The predefined operators (e.g. `FALSE`, `NaN`, etc.) lose their special
+properties when converted to a character.
+
+.center[ ![GIPHY](https://media.giphy.com/media/XWXnf6hRiKBJS/giphy.gif?cid=ecf05e473t5q522r6jzb3r3fa6a89pz2zgqod6wxjuene40z&amp;rid=giphy.gif&amp;ct=g) ]
+
+---
+class: middle, inverse
+
+## Exercises
+
+What type of object do you think the following vectors will be?  
+Use the `typeof` or `class` function to check.
+
+
+```r
+vector_1 &lt;- c(1, 3, "f", 2)
+vector_2 &lt;- c(4, TRUE, 5, 1)
+vector_3 &lt;- c("life", "universe", "everything", FALSE)
+vector_4 &lt;- c(3, 1, 4, 1, "5")
+```
+
+**Reminder:** Vectors can only hold one data type. Priority for vector conversion:
+
+character &gt; double &gt; integer &gt; logical
+
+---
+class: middle, inverse
+
+### Solution
+
+
+```r
+class(vector_1)
+```
+
+```
+## [1] "character"
+```
+
+```r
+class(vector_2)
+```
+
+```
+## [1] "numeric"
+```
+
+```r
+class(vector_3)
+```
+
+```
+## [1] "character"
+```
+
+```r
+class(vector_4)
+```
+
+```
+## [1] "character"
+```
+
+---
+class: middle, inverse
+
+## Exercises
+
+What happens if we combine `vector_2` and `vector_3`?  
+**Hint:** The `c` function can also combine vectors.
+
+
+```r
+vector_1 &lt;- c(1, 3, "f", 2)
+vector_2 &lt;- c(4, TRUE, 5, 1)
+vector_3 &lt;- c("life", "universe", "everything", FALSE)
+vector_4 &lt;- c(3, 1, 4, 1, "5")
+```
+
+--
+
+### Solution
+
+
+```r
+c(vector_2, vector_3)
+```
+
+```
+## [1] "4"          "1"          "5"          "1"          "life"      
+## [6] "universe"   "everything" "FALSE"
+```
+
+What happened to the `TRUE` entry in `vector_2`? 🤷
+
+---
+class: middle
+
+### Missing values
+
+Missing values in R, are represented with `NA`.
+
+
+```r
+artefacts &lt;- c(artefacts, NA) # add NA to the end of our artefacts vector
+artefacts
+```
+
+```
+## [1] "Sankara Stone"       "Ark of the Covenant" "Holy Grail"         
+## [4] "Crystal Skull"       "Sankara Stone"       NA
+```
+
+Keep this in mind when you are collecting data.
+
+--
+
+As you can see, `NA` is allowed to keep its special property in the various 
+vector types.
+
+
+```r
+is.na(artefacts)
+```
+
+```
+## [1] FALSE FALSE FALSE FALSE FALSE  TRUE
+```
+
+---
+class: middle, inverse
+
+## Working with the data types
+
+---
+class: middle
+
+### Subsetting with vectors
+
+Let's look at the `artefacts` again. We can extract elements of the vector by
+subsetting, square brackets `[]`, in various ways.
+
+We can do it by position using vectors:
+
+
+```r
+artefacts[3] # extract the third element
+```
+
+```
+## [1] "Holy Grail"
+```
+
+```r
+artefacts[c(1,4)] # extract first and fourth elements
+```
+
+```
+## [1] "Sankara Stone" "Crystal Skull"
+```
+
+```r
+artefacts[-3] # extract everything EXCEPT the third element
+```
+
+```
+## [1] "Sankara Stone"       "Ark of the Covenant" "Crystal Skull"      
+## [4] "Sankara Stone"       NA
+```
+
+---
+class: middle
+
+### Subsetting with conditions
+
+Or we can do it with conditional vectors:
+
+
+```r
+artefacts[c(TRUE, TRUE, TRUE, FALSE, TRUE)] # drop the fourth element
+```
+
+```
+## [1] "Sankara Stone"       "Ark of the Covenant" "Holy Grail"         
+## [4] "Sankara Stone"       NA
+```
+
+**Note: The conditional vector must be the same length as the vector you are 
+subsetting. If not, it will recycle elements of the conditional vector**
+
+--
+
+And conditional statements:
+
+
+```r
+artefacts[artefacts == "Sankara Stone"] ## NOTE the double '=='
+```
+
+```
+## [1] "Sankara Stone" "Sankara Stone" NA
+```
+
+```r
+# The statement actually just generates a conditional vector
+artefacts == "Sankara Stone"
+```
+
+```
+## [1]  TRUE FALSE FALSE FALSE  TRUE    NA
+```
+
+---
+class: middle
+
+### Subsetting with conditions
+
+If we have a numeric vector, we can subset with numeric conditions:
+
+
+```r
+my_numeric &lt;- runif(6, 0, 10) # 6 random numbers between 0 and 10
+my_numeric[my_numeric &lt; 5] # extract numbers less than 5
+```
+
+```
+## [1] 2.3764088 0.1977931 0.1668159 1.8333563
+```
+
+--
+
+And you can use multiple conditional statements with `&amp;` (and), or `|` (or):
+
+
+```r
+my_numeric[my_numeric &gt; 2 &amp; my_numeric &lt; 8] # numbers between 2 and 8
+```
+
+```
+## [1] 6.729919 2.376409 6.837768
+```
+
+---
+class: middle, inverse
+
+## Exercises
+
+Subset everything except the 3rd and 4th values from the `artefacts` vector.
+
+--
+
+### Solution
+
+
+```r
+artefacts[-c(3, 4)] # most efficient solution
+```
+
+```
+## [1] "Sankara Stone"       "Ark of the Covenant" "Sankara Stone"      
+## [4] NA
+```
+
+```r
+artefacts[c(TRUE, TRUE, FALSE, FALSE, TRUE, TRUE)]
+```
+
+```
+## [1] "Sankara Stone"       "Ark of the Covenant" "Sankara Stone"      
+## [4] NA
+```
+
+```r
+artefacts[c(1,2,5,6)]
+```
+
+```
+## [1] "Sankara Stone"       "Ark of the Covenant" "Sankara Stone"      
+## [4] NA
+```
+
+---
+class: middle
+
+### Modifying vectors
+
+We can use indexing to replace values in a vector
+
+
+```r
+artefacts[2] &lt;- NA # replace the second element with NA
+is.na(artefacts)
+```
+
+```
+## [1] FALSE  TRUE FALSE FALSE FALSE  TRUE
+```
+
+---
+class: middle
+
+## Vector operations
+
+We can perform operations on a vector using the operators listed earlier.
+
+
+```r
+my_numeric * 3 # multiply all elements by 3
+```
+
+```
+## [1] 20.1897575  7.1292265  0.5933794 20.5133049  0.5004478  5.5000688
+```
+
+```r
+my_numeric / 3 # divide all elements by 3
+```
+
+```
+## [1] 2.24330639 0.79213627 0.06593104 2.27925610 0.05560531 0.61111876
+```
+
+--
+
+We can also use functions on a vector:
+
+
+```r
+mean(my_numeric) # find the average of the vector
+```
+
+```
+## [1] 3.023677
+```
+
+```r
+round(my_numeric) # round all elements to a single digit (see ?round)
+```
+
+```
+## [1] 7 2 0 7 0 2
+```
+
+---
+class: middle
+
+## Done for the day
+
+When closing your RStudio session, you may be prompted to save workspace data.
+Do not save. It is best to start with a fresh session when you are working on
+an R Script.
+
+You can disable automatically loading .RData into RStudio by navigating to 
+
+Tools &gt; Global Options (or Project Options) &gt; General
+
+Then untick the .RData box under the **Workspace** header.
+
+---
+class: middle
+
+### Common errors
+
+`Error in &lt;function-name&gt; : could not find function "&lt;function-name&gt;"`
+
+- Typo
+- Using a non-function object as a function (Error: attempt to apply non-function)
+
+`Error: object '&lt;name&gt;' not found`
+
+- Typo
+- Did you remember to store the object?
+
+.footnote[
+#### 💡 Tip
+
+Your preferred search-engine is a very useful helper.
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"slideNumberFormat": ""
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

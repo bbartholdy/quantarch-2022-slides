@@ -1,0 +1,174 @@
+Settlement,Population,Area,UrbanSytem
+LondonSouthwark,70000,330,England
+York,22700,135,England
+Bristol,14400,130,England
+Lincoln,12300,115,England
+Norwich,14000,185,England
+Newcastle-upon-Tyne,9900,90,England
+Oxford,9800,94,England
+Coventry,9500,85,England
+Canterbury,8800,110,England
+Salisbury,7700,83,England
+Gloucester,7200,75,England
+GreatYarmouth,7000,80,England
+Cambridge,6900,88,England
+King’s Lynn,6900,95,England
+Winchester,9500,100,England
+Scarborough,6500,60,England
+Colchester,3500,60,England
+Boston,6200,40,England
+BuryStEdmunds,5800,78,England
+Shrewsbury,5700,58,England
+Hereford,5500,75,England
+Leicester,5400,75,England
+Ipswich,5300,90,England
+Stamford,4500,64,England
+Northampton,4200,90,England
+Nottingham,4200,63,England
+Plymouth,3800,72,England
+Kingston-upon-Hull,3800,35,England
+Exeter,3700,40,England
+Worcester,3700,40,England
+Southampton,3500,35,England
+Ely,3500,57,England
+Chester,3300,53,England
+Ludlow,3300,41,England
+Lichfield,2700,30,England
+Newark,2700,50,England
+Durham,2600,25,England
+Bridgnorth,2400,20,England
+Pontefract,2400,40,England
+Doncaster,2300,25,England
+Paris,200000,800,France & Belgium
+Rouen,40000,224,France & Belgium
+Orleans,21700,150,France & Belgium
+Reims,20000,240,France & Belgium
+Beauvais,15500,103,France & Belgium
+Troyes,25000,120,France & Belgium
+Chalons-sur-Marne,10000,100,France & Belgium
+Chartres,8700,60,France & Belgium
+Sens,5000,32,France & Belgium
+Provins,10000,146,France & Belgium
+Nancy,1000,11,France & Belgium
+Ghent,60000,362,France & Belgium
+Bruges,45000,300,France & Belgium
+Tournai,35000,175,France & Belgium
+Ypres,30000,250,France & Belgium
+Saint-Omer,35000,120,France & Belgium
+Mons,10000,150,France & Belgium
+Calais,12000,50,France & Belgium
+Amiens,21000,140,France & Belgium
+Arras,30000,182,France & Belgium
+Lille,30000,120,France & Belgium
+Liege,15000,200,France & Belgium
+Namur,14400,75,France & Belgium
+Mechlin,10000,105,France & Belgium
+Tours,24000,175,France & Belgium
+Blois,5000,32,France & Belgium
+Bourges,16300,115,France & Belgium
+Poitiers,15000,200,France & Belgium
+Toulouse,33000,250.5,France & Belgium
+Bordeaux,30000,197.5,France & Belgium
+Albi,10700,98,France & Belgium
+Perigueux,8000,70,France & Belgium
+Agen,6000,60,France & Belgium
+Angouleme,5000,40,France & Belgium
+Rodez,5000,35,France & Belgium
+Limoges,4000,75,France & Belgium
+Cahors,4500,45,France & Belgium
+Tarbes,4000,38,France & Belgium
+Pamiers,3500,33,France & Belgium
+Montpellier,40000,150,France & Belgium
+Narbonne,30000,150,France & Belgium
+Avignon,23200,151,France & Belgium
+Beziers,15000,99,France & Belgium
+Marseilles,19500,84,France & Belgium
+Arles,6700,40,France & Belgium
+Aix-en-Provence,6000,42,France & Belgium
+Sisteron,5600,60,France & Belgium
+Lodeve,4000,55,France & Belgium
+Toulon,3100,18,France & Belgium
+Carcassone,10000,68,France & Belgium
+Dijon,17300,104,France & Belgium
+Lyon,20000,72,France & Belgium
+Besancon,10200,99,France & Belgium
+Autun,7000,80,France & Belgium
+Le Puy,6000,50,France & Belgium
+Valence,5000,40,France & Belgium
+Clermont-Ferrand,8300,38,France & Belgium
+Vienne,4500,36,France & Belgium
+Macon,4000,36,France & Belgium
+Geneva,3500,45,France & Belgium
+Chalon-sur-Saone,3000,24,France & Belgium
+Grenoble,3000,20,France & Belgium
+Metz,26800,160,France & Belgium
+Bergamo,12000,119,N. Italy
+Brescia,45000,252,N. Italy
+Como,12000,96,N. Italy
+Cremona,45000,165,N. Italy
+Mantova,30000,215,N. Italy
+Milano,150000,500,N. Italy
+Monza,9000,56,N. Italy
+Pavia,20000,158,N. Italy
+Padova,40000,300,N. Italy
+Venezia,110000,324,N. Italy
+Verona,40000,380,N. Italy
+Vicenza,20000,84,N. Italy
+Genova,60000,220,N. Italy
+Bologna,50000,419,N. Italy
+Faenza,10000,80,N. Italy
+Ferrara,12000,150,N. Italy
+Forli,14000,99,N. Italy
+Modena,19000,150,N. Italy
+Parma,25000,201,N. Italy
+Piacenza,23000,290,N. Italy
+Ravenna,12000,110,N. Italy
+Reggio Emilia,13000,100,N. Italy
+Rimini,14000,48,N. Italy
+Arezzo,18000,107,N. Italy
+Firenze,110000,630,N. Italy
+Pisa,30000,185,N. Italy
+Pistoia,12000,115.5,N. Italy
+Prato,13000,66,N. Italy
+Siena,50000,180,N. Italy
+Lucca,25000,95,N. Italy
+Augsburg,25000,189,Germany
+Bamberg,8000,75,Germany
+Bautzen,5000,70,Germany
+Bremen,12000,70,Germany
+Dresden,5000,85,Germany
+Erfurt,23300,133,Germany
+FrankfurtAmMain,13000,128,Germany
+Goerlitz,7000,72,Germany
+Greifswald,8000,72,Germany
+Halberstadt,6000,89,Germany
+Hamburg,8000,88,Germany
+Hannover,5000,54,Germany
+Leipzig,3000,42,Germany
+Luebeck,23600,200,Germany
+Lueneburg,8000,56,Germany
+Mainz,24500,120,Germany
+Noerdlingen,10000,93,Germany
+Nuernberg,13000,149,Germany
+Paderborn,7000,70,Germany
+Regensburg,11000,95,Germany
+Rostock,14000,98,Germany
+Stralsund,12000,72,Germany
+Stuttgart,5000,50,Germany
+Ulm,7300,75,Germany
+Wismar,8000,58,Germany
+Worms,18700,170,Germany
+Wuerzburg,7000,72,Germany
+Braunschweig,12000,115,Germany
+Muehlhausen,7500,50,Germany
+Strasbourg,20000,270,Germany
+Basel,11000,75,Germany
+Konstanz,6000,50,Germany
+Zurich,9500,70,Germany
+Aachen,20000,175,Germany
+Dortmund,7000,72,Germany
+Koeln,54000,400,Germany
+Muenster,16000,140,Germany
+Osnabrueck,9000,98,Germany
+Soest,11500,111,Germany
+Trier,12700,133,Germany

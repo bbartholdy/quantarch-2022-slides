@@ -1,0 +1,96 @@
+---
+title: "Hypothesis Testing"
+subtitle: "Part 2: Testing assumptions"
+author: ""
+faculty: "Archaeology"
+date: "QuantArch Week 5 | 07-03-2022"
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    #chakra: libs/remark-latest.min.js # for offline usage
+    css: [assets/css/extra.css, assets/css/leiden.css, assets/css/leiden-fonts.css]
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: ""
+---
+class: middle, title-slide, inverse
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(broom)
+knitr::opts_chunk$set(message = FALSE,
+                      warning = FALSE,
+                      fig.path = "assets/04_hypothesis-test_files/")
+pits_data_raw <- readr::read_csv("assets/data/house_pits_missouri.csv", na = "N/a")
+pits_data_long <- readr::read_csv("assets/data/pits-data_long.csv")
+pits_data <- readr::read_csv("assets/data/pits-data.csv")
+pits_data$Segment <- as.factor(pits_data$Segment)
+  # pits_data_raw %>%
+  # mutate(Segment = as_factor(Segment),
+  #        Inside = as_factor(Inside)) %>%
+  # rename(Location = Inside) %>%
+  # rowwise() %>%
+  # mutate(total = sum(
+  #   c_across(Points:Ceramics),
+  #   na.rm = T))
+faculty_cols <- data.frame(faculty = c("Social & Behavioural Sciences", "Science",
+                                       "Humanities", "Archaeology", 
+                                       "Governance and Global Affairs", "Medicine",
+                                       "Law"),
+                           colour = c("#be1908", "#f46e32", "#aaad00", "#2c712d",
+                                      "#34a3a9", "#5cb1eb", "#b02079"))
+
+m1 <- match(faculty_cols$faculty, rmarkdown::metadata$faculty)
+m1 <- !is.na(m1)
+accent_col <- faculty_cols$colour[m1]
+# xaringanthemer::style_xaringan(text_bold_color = accent_col, 
+#                                outfile = "assets/css/extra.css")
+colorize <- function(x, color) {
+    sprintf("<span style='color: %s;'>%s</span>", color, x)
+}
+```
+
+
+.title-left[
+# `r rmarkdown::metadata$title`
+
+### `r rmarkdown::metadata$subtitle`
+
+#### `r rmarkdown::metadata$date`
+]
+
+---
+layout: true
+class: middle
+<div class='footer'>
+<span>Discover the world at Leiden University</span>
+<img src='assets/img/logo.png' width=82 />
+</div>
+---
+
+```{r echo=FALSE}
+xaringanExtra::use_progress_bar(color = "#2c712d")
+```
+
+
+<!-- Start a new project from scratch
+        - New RStudio project
+        - Upload data
+        - summary frames
+        - visualise data
+        - check assumptions
+        - two-sample test -->
+
+## Testing assumptions
+
+T-test assumptions
+
+---
+
+## Visualising the data
+
+Perhaps more important than the test itself.

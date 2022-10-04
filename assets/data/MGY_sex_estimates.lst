@@ -1,0 +1,822 @@
+CEMETERY|SITECODE|PERIOD|LU_INT|E_DATE|L_DATE|CONTEXT|SEX|AGE|TRAIT_TYPE|GROUP|EXPANSION|VALUE
+
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10181|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|1|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|5|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|3|
+Medieval-Guildhall Yard|GYE92|16|OA221|1550|1666|10425|INTERMEDIATE|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|3|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10644|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10647|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S2 Mastoid Process|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S6 Zygoma Root|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Mandible|S7 Gonions|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10650|FEMALE|ADULT 26-35 YEARS|Sex assessment|Overall|Overall Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10652|UNSEXED CHILD|SUB-ADULT 12-17 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Cranium|S2 Mastoid Process|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Cranium|S6 Zygoma Root|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Mandible|S7 Gonions|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10656|FEMALE|ADULT >46 YEARS|Sex assessment|Overall|Overall Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10660|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10661|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10666|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|9|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|1|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|1|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|2|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Mandible|S7 Gonions|1|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|2|
+Medieval-Guildhall Yard|GYE92|13|OA219|1270|1350|10682|MALE?|ADULT 18-25 YEARS|Sex assessment|Overall|Overall Sex|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Cranium|S2 Mastoid Process|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Cranium|S5 Forehead|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Cranium|S6 Zygoma Root|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|3|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10688|INTERMEDIATE|ADULT 26-35 YEARS|Sex assessment|Overall|Overall Sex|3|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10689|UNSEXED CHILD|SUB-ADULT 6-11 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S2 Mastoid Process|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S5 Forehead|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S6 Zygoma Root|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Mandible|S7 Gonions|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10690|MALE|ADULT 18-25 YEARS|Sex assessment|Overall|Overall Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10695|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Overall|Overall Sex|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10696|UNSEXED CHILD|SUB-ADULT 6-11 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10699|UNSEXED CHILD|SUB-ADULT 12-17 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S2 Mastoid Process|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S5 Forehead|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S6 Zygoma Root|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Mandible|S7 Gonions|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10705|FEMALE|ADULT 26-35 YEARS|Sex assessment|Overall|Overall Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10723|MALE?|ADULT 36-45 YEARS|Sex assessment|Overall|Overall Sex|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10724|UNSEXED CHILD|SUB-ADULT 12-17 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Cranium|S2 Mastoid Process|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Cranium|S6 Zygoma Root|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Mandible|S7 Gonions|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10731|FEMALE|ADULT >46 YEARS|Sex assessment|Overall|Overall Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S2 Mastoid Process|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S6 Zygoma Root|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Mandible|S7 Gonions|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10734|MALE|ADULT 36-45 YEARS|Sex assessment|Overall|Overall Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S2 Mastoid Process|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Mandible|S7 Gonions|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10739|MALE?|ADULT 36-45 YEARS|Sex assessment|Overall|Overall Sex|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10756|UNSEXED CHILD|SUB-ADULT 6-11 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10770|UNSEXED CHILD|SUB-ADULT 1-5 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S2 Mastoid Process|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S5 Forehead|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S6 Zygoma Root|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Mandible|S7 Gonions|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10774|MALE|ADULT 36-45 YEARS|Sex assessment|Overall|Overall Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|3|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10786|FEMALE|ADULT 36-45 YEARS|Sex assessment|Overall|Overall Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S2 Mastoid Process|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S6 Zygoma Root|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10792|MALE|ADULT 26-35 YEARS|Sex assessment|Overall|Overall Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|10856|UNSEXED CHILD|SUB-ADULT 6-11 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10862|UNSEXED CHILD|SUB-ADULT 6-11 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10890|UNSEXED CHILD|SUB-ADULT 6-11 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10891|MALE?|ADULT 18-25 YEARS|Sex assessment|Overall|Overall Sex|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10894|FEMALE|ADULT 26-35 YEARS|Sex assessment|Overall|Overall Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S2 Mastoid Process|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S6 Zygoma Root|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Mandible|S7 Gonions|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10912|FEMALE|ADULT 18-25 YEARS|Sex assessment|Overall|Overall Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S2 Mastoid Process|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S5 Forehead|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S6 Zygoma Root|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Mandible|S7 Gonions|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10915|MALE?|ADULT 36-45 YEARS|Sex assessment|Overall|Overall Sex|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10932|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10947|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Cranium|S2 Mastoid Process|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|3|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Cranium|S5 Forehead|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Cranium|S6 Zygoma Root|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Mandible|S7 Gonions|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|10957|MALE?|ADULT 26-35 YEARS|Sex assessment|Overall|Overall Sex|2|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|1|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|1|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|4|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|1|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|5|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|1|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|2|
+Medieval-Guildhall Yard|GYE92|10|OA127|1050|1140|11692|MALE?|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|2|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S2 Mastoid Process|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S5 Forehead|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S6 Zygoma Root|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Mandible|S7 Gonions|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13017|FEMALE|ADULT 18-25 YEARS|Sex assessment|Overall|Overall Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13042|UNSEXED CHILD|SUB-ADULT 12-17 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S2 Mastoid Process|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S5 Forehead|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S6 Zygoma Root|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Mandible|S7 Gonions|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13056|MALE|ADULT 18-25 YEARS|Sex assessment|Overall|Overall Sex|1|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13110|UNSEXED CHILD|SUB-ADULT 1-5 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13209|UNSEXED CHILD|SUB-ADULT 6-11 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13281|UNDETERMINABLE|ADULT 36-45 YEARS|Sex assessment|Overall|Overall Sex|9|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|4|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|4|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|5|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S2 Mastoid Process|4|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|2|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|2|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S5 Forehead|2|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S6 Zygoma Root|5|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|4|
+Medieval-Guildhall Yard|GYE92|11|OA132|1140|1230|13287|FEMALE?|ADULT >46 YEARS|Sex assessment|Overall|Overall Sex|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13316|UNSEXED CHILD|SUB-ADULT 6-11 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13366|UNSEXED CHILD|SUB-ADULT 6-11 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|4|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S2 Mastoid Process|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S5 Forehead|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S6 Zygoma Root|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Mandible|S7 Gonions|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|5|
+Medieval-Guildhall Yard|GYE92|11|OA115|1140|1230|13367|FEMALE|ADULT 26-35 YEARS|Sex assessment|Overall|Overall Sex|5|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|1|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|1|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|1|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|1|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|1|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|1|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|1|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Cranium|S2 Mastoid Process|1|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Cranium|S6 Zygoma Root|1|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Mandible|S7 Gonions|1|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA108|1050|1140|17166|MALE|ADULT >46 YEARS|Sex assessment|Overall|Overall Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|2|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S2 Mastoid Process|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S5 Forehead|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S6 Zygoma Root|2|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Mandible|S7 Gonions|2|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|2|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20065|MALE|ADULT 26-35 YEARS|Sex assessment|Overall|Overall Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Mandible|S7 Gonions|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|2|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20105|MALE|ADULT 36-45 YEARS|Sex assessment|Overall|Overall Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|3|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|2|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|2|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S2 Mastoid Process|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S5 Forehead|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S6 Zygoma Root|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Mandible|S7 Gonions|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20109|FEMALE|ADULT 26-35 YEARS|Sex assessment|Overall|Overall Sex|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|2|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S2 Mastoid Process|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S5 Forehead|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S6 Zygoma Root|2|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Mandible|S7 Gonions|2|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20113|FEMALE?|ADULT >46 YEARS|Sex assessment|Overall|Overall Sex|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20117|UNSEXED CHILD|SUB-ADULT 7-11 MONTHS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20277|UNSEXED CHILD|SUB-ADULT 6-11 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20533|UNSEXED CHILD|SUB-ADULT 1-5 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S2 Mastoid Process|5|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|2|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|4|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S5 Forehead|5|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Cranium|S6 Zygoma Root|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Mandible|S7 Gonions|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|2|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20538|MALE|ADULT 26-35 YEARS|Sex assessment|Overall|Overall Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|2|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|2|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S2 Mastoid Process|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|2|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S5 Forehead|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Cranium|S6 Zygoma Root|2|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Mandible|S7 Gonions|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20543|MALE|ADULT 18-25 YEARS|Sex assessment|Overall|Overall Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20554|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|5|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|5|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|4|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|2|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|3|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|5|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Mandible|S7 Gonions|3|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|10|OA101|1050|1140|20574|FEMALE?|ADULT >46 YEARS|Sex assessment|Overall|Overall Sex|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20578|UNSEXED CHILD|SUB-ADULT 6-11 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20582|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20586|UNSEXED CHILD|SUB-ADULT 6-11 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20588|MALE|ADULT 36-45 YEARS|Sex assessment|Overall|Overall Sex|1|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P1 Greater Sciatic Notch|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P2 Preauricular Sulcus|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Pelvis|P8 Overall Pelvic Sex|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Mandible|S7 Gonions|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|S8 Overall Skull Sex|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20590|UNDETERMINABLE|UNCLASSIFIED ADULT|Sex assessment|Overall|Overall Sex|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20619|UNSEXED CHILD|SUB-ADULT 1-5 YEARS|Sex assessment|Overall|Overall Sex|0|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P1 Greater Sciatic Notch|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P2 Preauricular Sulcus|5|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P3 Ventral Arc|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P4 Medial Portion Of Pubis|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P5 Subpubic Angle|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P6 Subpubic Concavity|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P7 Median Ischiopubic Ridge|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Pelvis|P8 Overall Pelvic Sex|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S1 Supraorbital Ridges|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S2 Mastoid Process|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S3 Inion Protruberance|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S4 Nuchal Crest|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S5 Forehead|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Cranium|S6 Zygoma Root|9|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Mandible|S7 Gonions|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Overall|S8 Overall Skull Sex|4|
+Medieval-Guildhall Yard|GYE92|10|OA102|1050|1140|20623|FEMALE?|ADULT 36-45 YEARS|Sex assessment|Overall|Overall Sex|4|

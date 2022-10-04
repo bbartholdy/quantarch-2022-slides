@@ -1,0 +1,1060 @@
+---
+title: "Data Wrangling in R"
+subtitle: ""
+author: "QuantArch Week 2 | 14-02-2022"
+institute: "Leiden University"
+date: "TBD (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [assets/css/leiden.css, assets/css/leiden-fonts.css]
+    seal: false
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: ""
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(here)
+pits_data_raw <- readr::read_csv("assets/data/house_pits_missouri.csv", na = "N/a")
+```
+
+class: middle, title-slide, inverse
+
+.title-left[
+# `r rmarkdown::metadata$title`
+
+### `r rmarkdown::metadata$subtitle`
+
+#### `r rmarkdown::metadata$author`
+]
+
+---
+layout: true
+class: middle, left
+<div class='footer'>
+<span>Discover the world at Leiden University</span>
+<img src='assets/img/logo.png' width=82 />
+</div>
+---
+
+```{r xaringan-slider, echo=FALSE}
+xaringanExtra::use_progress_bar("#2c712d")
+```
+
+## Summary
+
+### Data types in R:
+
+**logical:** `TRUE`, `FALSE`, `NA`  
+**integer:** `1`, `2`, ..., infinity ( $\aleph_0$ )  
+**double:** `NaN`, `1.0`, `1.1`, `1.2`, ..., more infinity ( $\aleph_1$ )  
+**NULL:** `NULL`
+
+--
+
+### Data structures in R
+
+**Vector:** `c("7","ate", "9")`  
+**Matrix:** Table with one data type  
+**Data frame:** Table containing different data types  
+**List:** Ordered collection of any R objects
+
+**Function:** `print()`, `mean()`, `sum()`, `c()`
+
+---
+
+## Summary
+
+### Subsetting
+
+**Position:**
+
+`vector[3]` show third element  
+`vector[-3]` show all EXCEPT third element  
+`vector[c(1,2,3)]` show first three elements
+
+--
+
+**Condition:**
+
+`vector[vector == "condition"]` show elements matching condition  
+`vector[vector < 5]` show elements less than 5
+
+
+---
+class: inverse
+
+## Uploading Data
+
+---
+class: middle
+
+## Dataset
+
+House pits at the Mississippian Snodgrass site in Butler County, Missouri, U.S.A.
+
+Download *House Pits Missouri.xlsx* from Brightspace and store the file in a folder `data/raw_data`.
+
+`r emo::ji("danger")` **DO NOT TOUCH THIS FILE** `r emo::ji("danger")`  
+Make a copy of the file and call it `house-pits_cleaned.xlsx`
+
+--
+
+```
+project
+│   README.md
+│       
+└───data
+│   │   
+│   └───raw_data
+│       │   House Pits Missouri.xlsx
+│       │   house-pits_cleaned.csv
+│
+└───scripts
+│   │   
+│   │
+│   └───lab1.R
+```
+
+---
+class: inverse
+
+## Exercise
+
+### Fix problems with the data
+
+What issues might you encounter with the data as is?
+
+Is it machine-readable?
+
+Is it human-readable?
+
+---
+
+## Save data
+
+Save the cleaned data as `house-pits_cleaned.csv`
+
+--
+
+Why `*.csv`? (comma separated values)
+
+--
+
+FA-**I**-R data
+
+- **Interoperability:** non-propritary data format
+
+---
+
+## Uploading data to R
+
+There are multiple ways to upload data to R.
+
+Base R
+
+```r
+read.table  # for *.txt files
+read.csv    # for *.csv files
+read.csv2   # for *.csv files separated by ';'
+```
+
+tidyverse (specifically the **readr** package)
+
+```r
+read_delim  # for multiple file-types
+read_csv    # for *.csv files
+read_csv2   # for *.csv files separated by ';'
+read_tsv    # for *.tsv files (tab separated values)
+```
+
+There are also functions to upload *.xlsx* files, but we won't be using those.
+
+---
+background-image: url(assets/img/tidyverse-logo.png)
+background-position: 88% 50%
+background-size: 24%
+
+.title-left[
+## tidyverse
+
+> The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
+
+In this class we will mostly rely on the tidyverse (vs. base R)
+
+]
+.foot-note[[tidyverse](https://github.com/rstudio/hex-stickers)]
+
+---
+background-image: url(assets/img/tidyverse-packages.png)
+background-size: cover
+
+`install.packages("tidyverse")`
+
+Installing/loading **tidyverse** installs the following packages (and dependencies):
+
+.pull-left[
+
+
+- **ggplot2**, for data visualisation.
+- **dplyr**, for data manipulation.
+- **tidyr**, for data tidying.
+- **readr**, for data import.]
+
+.pull-right[
+- **purrr**, for functional programming.
+- **tibble**, a modern re-imagining of data frames.
+- **stringr**, for strings.
+- **forcats**, for factors.]
+
+---
+class: inverse
+
+## Exercise
+
+Install the **here** and **tidyverse** packages
+
+**Note:** linux users may have to install the following dependencies:
+
+`libcurl4-openssl-dev libssl-dev libxml2-dev`
+
+--
+
+### Solution
+
+```{r eval=FALSE}
+install.packages("here")
+install.packages("tidyverse")
+# or
+install.packages(c("here", "tidyverse"))
+```
+
+---
+
+## Loading packages
+
+To upload the data, we will use the **here** and **readr** packages
+
+**readr** is installed with **tidyverse**
+
+--
+
+Every time we start R(Studio), only essential packages are loaded
+
+This allows R to be light-weight, since it only loads a few packages on startup
+
+--
+
+We can use the `library` function to load packages
+
+```{r eval=FALSE}
+library(here)
+```
+
+---
+
+## (Not) Loading packages
+
+We can also use functions without loading the package by explicitly calling
+the package that contains the function
+
+```{r eval=FALSE}
+# library(readr)
+readr::read_csv(here("<path/to/cleaned/data.csv>"))
+```
+
+This is useful if we only need a single function from a package
+
+---
+
+## Uploading our data
+
+Now we can use **here** and **readr** to upload our data
+
+```{r include=FALSE}
+pits_data_raw <- readr::read_csv(here("assets/data/house_pits_missouri.csv"))
+```
+
+```{r eval=FALSE}
+pits_data_raw <- readr::read_csv(here("data/raw_data/house_pits-clean.csv"))
+```
+
+
+The `here` function ensures that our filepaths always start at the project root,
+
+no matter where we are in the project directory
+
+**Note**: when uploading data with **tidyverse** functions,
+
+the resulting data will be in a *tibble* (a special type of data frame)
+
+---
+
+## Data uploaded
+
+.center[ ![](https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif) ]
+
+.center[ it can actually be a bit of a headache... ]
+
+---
+
+## Let's explore!
+
+.center[![](https://media.giphy.com/media/UAkLHNaScd6Zjlx5eZ/giphy.gif)]
+
+---
+
+## Metadata
+
+```{r echo=FALSE}
+data.frame("variables" = names(pits_data_raw), 
+           "description" = c("East grid location of house in feet (excavation grid system)",
+                             "South grid location of house in feet (excavation grid system)",
+                             "House length in feet",
+                             "House width in feet",
+                             "Three areas within the site 1, 2, 3",
+                             "Location within or outside the 'white wall' Inside, Outside",
+                             "Area in square feet",
+                             "Number of projectile points",
+                             "Number of abraders",
+                             "Number of discs",
+                             "Number of earplugs",
+                             "Number of effigies",
+                             "Number of ceramics"
+                                                                 )) %>%
+  knitr::kable()
+```
+
+
+---
+
+First we can take a look at the `str`ucture of our data
+
+```{r data-structure, eval=FALSE}
+str(pits_data_raw)
+```
+
+--
+
+```{r data-structure-output, echo=FALSE}
+str(pits_data_raw)
+```
+
+---
+
+See Any issues? 
+
+`r emo::ji("bulb")` **Hint:** Recall the conversion of vectors.
+
+```{r data-structure-2, echo=TRUE}
+str(pits_data_raw)
+```
+
+---
+
+To fix this, we can add an argument to our upload:
+
+--
+
+```{r pits-na, echo=TRUE, eval=FALSE, message=FALSE}
+pits_data_raw <- readr::read_csv("assets/data/house_pits_missouri.csv", na = "N/a")
+str(pits_data_raw)
+```
+
+```{r pits-na-output, echo=FALSE, message=FALSE}
+pits_data_raw <- readr::read_csv("assets/data/house_pits_missouri.csv", na = "N/a")
+str(pits_data_raw)
+```
+
+---
+
+The `na` argument in the `readr::read_csv("house_pits_missouri.csv", na = "N/a")` code lets us indicate how missing values are recorded in the raw data
+
+--
+
+and converts them to the proper format for missing values in R
+
+--
+
+which is `NA`.
+
+--
+
+That took care of most of the type issues.
+
+---
+layout: true
+class: middle, left
+<div class='footer'>
+<span>Discover the world at Leiden University</span>
+<img src='assets/img/logo.png' width=82 />
+</div>
+---
+
+## Changing variables
+
+The `Segment` and `Inside` variables are currently *numeric* and *character*,
+
+and should probably be *categorical*.
+
+--
+
+This can be done in base R with:
+
+```{r base-r-factor, eval=TRUE}
+# We don't want to change the raw data frame...
+pits_data <- pits_data_raw # ...so we create a copy
+# index the target variable and assign to it the corrected variable
+pits_data$Inside <- as.factor(pits_data$Inside)
+```
+
+--
+
+```{r variable-inside-factor}
+pits_data$Inside # print just the 'Inside' variable
+```
+
+---
+
+## Changing variables
+
+The `Segment` and `Inside` variables are currently *numeric* and *character*,
+
+and should probably be *categorical*.
+
+Or with the **tidyverse** using `mutate()`:
+
+```{r mutate-factor, message=FALSE}
+library(tidyverse)
+pits_data <- mutate(pits_data_raw, Inside = as.factor(Inside))
+```
+
+```{r}
+pits_data$Inside
+```
+
+---
+background-image: url(assets/img/dplyr_mutate_blank.png)
+background-position: right
+background-size: contain
+
+## Mutate
+
+.pull-left[
+`mutate()` allows you to modify existing variables,
+
+and make new variables.
+]
+
+---
+
+## Mutate
+
+We can also change the `Segment` variable in the same function:
+
+```{r mutate-segment-too}
+pits_data <- mutate(pits_data_raw, 
+                            Inside = as.factor(Inside),
+                            Segment = as.factor(Segment))
+pits_data$Segment
+```
+
+---
+
+## Mutate
+
+We can also change the `Segment` variable in the same function:
+
+```{r mutate-segment-too-2, eval=TRUE}
+pits_data <- mutate(pits_data_raw, 
+                    Inside = as.factor(Inside),
+                    Segment = as.factor(Inside))
+pits_data$Segment
+```
+
+---
+
+## Mutate
+
+We can also change the `Segment` variable in the same function:
+
+```{r mutate-segment-too-3, eval=FALSE}
+pits_data <- mutate(pits_data_raw, 
+                    Inside = as.factor(Inside),
+                    Segment = as.factor(Inside))
+pits_data$Segment
+```
+
+So what's going on here? `r emo::ji("monocle")`
+
+--
+
+```{r mutate-skeleton, eval=FALSE}
+pits_data <- mutate( <data frame with variables> ,
+                     <new variable> = <modification> ,
+                     <new variable> = <modification> ,
+                     <new variable> = ...etc )
+```
+
+---
+
+## Mutate
+
+We can also change the `Segment` variable in the same function:
+
+```{r mutate-segment-too-4, eval=FALSE}
+pits_data <- mutate(pits_data_raw, 
+                    Inside = as.factor(Inside),
+                    Segment = as.factor(Inside))
+pits_data$Segment
+```
+
+We could also have assigned the changes to a new variable:
+
+```{r mutate-new-variables, eval=FALSE}
+pits_data <- mutate(pits_data_raw,
+                    Inside_fct = as.factor(Inside),
+                    Segment_fct = as.factor(Inside))
+```
+
+---
+
+## Indexing data frames/tibbles
+
+You may have noticed we have been using the 'dollar symbol', `$`
+
+This is a way to index data frames (and tibbles) by variable name
+
+```{r}
+pits_data$Segment
+```
+
+---
+
+## Indexing data frames/tibbles
+
+We can also use square brackets: `dataframe[<rows>,<columns>]`
+
+```{r}
+pits_data[,5] # index all rows and 5th column
+```
+
+---
+
+## Indexing data frames/tibbles
+
+We can also use square brackets: `dataframe[<rows>,<columns>]`
+
+```{r eval=FALSE}
+pits_data[,5] # index all rows and 5th column
+```
+
+We needed to know that the `Segment` variable was the 5th column,
+
+so sometimes it's easier to index by name
+
+--
+
+What's the difference between the two outputs? (hint: use `class` function)
+
+---
+
+## Summary statistics
+
+We can summarise our data to get an overview.
+
+Let's see what the `mean` value is for the `Area` variable:
+
+--
+
+```{r summarise-alone, eval=FALSE}
+#summarise(pits_data, mean = mean(Area))
+mean(pits_data$Area)
+```
+
+--
+
+```{r summarise-alone-output, echo=FALSE}
+#summarise(pits_data, mean = mean(Area))
+mean(pits_data$Area)
+```
+
+
+--
+
+`NA`? That doesn't seem right...
+
+--
+
+```{r summarise-alone-na}
+mean(pits_data$Area, na.rm = T) # that's better
+```
+
+---
+
+## Summary statistics
+
+```{r summarise-alone-na-2}
+mean(pits_data$Area, na.rm = T)
+```
+
+This is not particularly informative.
+
+---
+
+## Summary statistics continued
+
+More interesting would be to see if there is a difference between houses
+located `Inside` or `Outside` the "white wall".
+
+--
+
+To achieve this, we could `filter` the data before taking the `mean`:
+
+--
+
+```{r summarise-inside}
+filter(pits_data, Inside == "Inside") # filter with conditional statement
+```
+
+---
+
+## Summary statistics continued
+
+More interesting would be to see if there is a difference between houses
+located `Inside` or `Outside` the "white wall".
+
+```{r summarise-inside-assign}
+pits_data_inside <- filter(pits_data, Inside == "Inside")
+mean(pits_data_inside$Area, na.rm = T)
+```
+
+---
+
+## Summary statistics continued
+
+More interesting would be to see if there is a difference between houses
+located `Inside` or `Outside` the "white wall".
+
+And now the houses 'Outside':
+
+--
+
+```{r summarise-outside-assign}
+pits_data_outside <- filter(pits_data, Inside == "Outside")
+mean(pits_data_outside$Area, na.rm = T)
+```
+
+---
+
+## Summary statistics continued
+
+More interesting would be to see if there is a difference between houses
+located `Inside` or `Outside` the "white wall".
+
+Then compare
+
+```{r compare-location-means}
+mean(pits_data_outside$Area, na.rm = T)
+mean(pits_data_inside$Area, na.rm = T)
+```
+
+There's got to be an easier way to `summarise`... `r emo::ji("wink")`
+
+---
+class: inverse
+
+## Break!
+
+---
+
+## Summarise
+
+Enter the `summarise` and `group_by` functions from **dplyr**!
+
+--
+
+A more convenient way to get summary statistics for different groups,
+
+is to use the `group_by` function.
+
+--
+
+This allows you to use a group variables (factors) without `filter`ing:
+
+```{r group-by}
+pits_data_grouped <- group_by(pits_data, Inside)
+
+summarise(pits_data_grouped, 
+          mean = mean(Area, na.rm = T)) # summarise with the mean function
+```
+
+The `summarise` function provides a new *tibble* with the summary statistics.
+
+---
+
+## Summary statistics continued, the final chapter, the sequel
+
+What did we do?
+
+--
+
+```
+pits_data_outside <- group_by( <data to group> , 
+                                    <variable(s) to group by> )
+
+summarise(<data to summarise>,
+          <new variable for output> = <function>(<variable>) )
+```
+
+---
+class: inverse
+
+## Exercise
+
+Get the mean values for the `Points` variable for houses and `group_by` the `Inside` variable.
+
+--
+
+### Solution
+
+```{r summarise-exercise}
+pits_data_grouped <- group_by(pits_data, Inside)
+summarise(pits_data_grouped, mean = mean(Points, na.rm = T))
+```
+
+---
+
+## Renaming variables
+
+The `Inside` variable name is really starting to annoy me...
+
+`r emo::ji("bulb")` The variable name should not be the same as a value within that
+variable.
+
+let's `rename` it:
+
+```{r}
+pits_data_renamed <- rename(pits_data, Location = Inside)
+```
+
+
+---
+background-image: url(assets/img/pipe.png)
+background-position: 88% 50%
+background-size: 24%
+
+.title-left[
+## Pipes
+
+We have accumulated a few intermediate data frames.
+
+```{r show-data}
+ls() # list all elements in the Global Environment
+```
+
+This can be avoided (to some extent) with the 'pipe' operator `%>%`
+
+(loaded with tidyverse).
+]
+
+---
+
+## Pipes
+
+The pipe allows us to perform multiple operations in a single ...
+
+Let's recap what we have done so far:
+
+```{r summarise-pipe}
+pits_data <- pits_data_raw %>%
+  mutate(Segment = as_factor(Segment),
+         Inside = as_factor(Inside)) %>%
+  rename(Location = Inside) 
+# We don't want to store the summary output
+pits_data %>%
+  group_by(Location) %>%
+  summarise(mean = mean(Points, na.rm = T))
+```
+
+The data `pits_data_raw` is 'piped' through to all subsequent functions.
+
+---
+
+## Pipes
+
+Think of it as saying
+
+```r
+take 'pits_data', and then
+  filter by 'Inside', and then
+  take the mean Area of all 'Inside'
+```
+
+.center[ ![](https://media.giphy.com/media/bzaEWi1Z1xzby/giphy.gif) ]
+
+---
+class: inverse
+
+## Exercise
+
+Find the `median` values of `Ceramics` for each `Segment`
+
+--
+
+## Solution
+
+```{r median-solution}
+pits_data %>%
+  group_by(Segment) %>%
+  summarise(median = median(Ceramics, na.rm = T))
+```
+
+---
+
+## New variables
+
+<!-- Easier to do in long or wide form?? -->
+
+We may be interested in creating a new variable that has the total number
+of artifacts.
+
+So for each row, we will need the sum of artifact variables.
+
+--
+
+```{r rowwise-sum, eval=FALSE}
+pits_data %>%
+  rowwise() %>% # we want to calculate each row separately
+  mutate(total = sum(
+    c_across(Points:Ceramics), # we want to sum these variables
+    na.rm = T))
+```
+
+--
+
+```{r rowwise-sum-out, echo=FALSE}
+pits_data %>%
+  rowwise() %>% # we want to calculate each row separately
+  mutate(total = sum(
+    c_across(Points:Ceramics), # we want to sum these variables
+    na.rm = T)) %>%
+  select(!c(Length, Width,Segment, Location))
+```
+
+---
+
+## New variables
+
+The 'tidyverse' way is not always easiest...
+
+```{r base-rowwise, eval=TRUE}
+pits_data$total <- rowSums(pits_data[,8:13], na.rm = T)
+```
+
+```{r base-rowwise-out, echo=FALSE}
+pits_data %>%
+  select(!c(Length, Width, Segment, Location))
+```
+
+---
+background-image: url(assets/img/tidydata_1.jpg)
+background-position: left
+background-size: 55%
+
+.pull-right[
+## Tidy data
+
+The current data format we are working with is known as 'wide'.
+
+Wide data has individuals as rows, and variables as columns.
+
+In tidy data (a.k.a. 'long' data), the result of a single observation forms a row,
+
+meaning the results from a single individual may span multiple rows.]
+
+---
+layout: false
+class: left
+background-image: url(assets/img/tidydata_4.jpg)
+background-size: contain
+<div class='footer'>
+<span>Discover the world at Leiden University</span>
+<img src='assets/img/logo.png' width=82 />
+</div>
+
+
+## Tidy data
+
+If all data are structured the same way, it is easier to collaborate! `r emo::ji("celebrate")`
+
+---
+layout: true
+class: middle, left
+<div class='footer'>
+<span>Discover the world at Leiden University</span>
+<img src='assets/img/logo.png' width=82 />
+</div>
+---
+
+## Pivoting
+
+There are two pivot functions to switch between 'long' and 'wide'
+
+- `pivot_longer`
+- `pivot_wider`
+
+Pretty self-explanatory...
+
+.center[ ![](https://media.giphy.com/media/oCjCwnuLpiWbfMb1UA/giphy.gif) ]
+
+---
+
+## Pivoting
+
+```{r pivot-setup, include=FALSE}
+pits_data_long <- pits_data %>%
+  pivot_longer(cols = Points:total, names_to = "artifact", values_to = "count")
+```
+
+Let's try pivoting our data with `pivot_longer`
+
+--
+
+- `cols` is a vector of the variables we want to transform
+
+- `names_to` is the name of the new column where we want to store the variable names
+
+- `values_to` is the new column where we want to put the values of our variables
+
+--
+
+```{r pivot-longer, eval=FALSE}
+pits_data_long <- pits_data %>%
+  pivot_longer(cols = Points:total, names_to = "artifact", values_to = "count")
+```
+
+--
+
+```{r pivot-longer-out, echo=FALSE}
+pits_data %>%
+  pivot_longer(cols = Points:total, names_to = "artifact", values_to = "count")
+```
+
+---
+
+.pull-left[
+## What just happened?
+
+We have combined all the artifact variables to two columns.
+
+By doing this we have made the data frame longer.]
+
+.pull-right[
+```{r pivot-longer-out2, echo=FALSE}
+pits_data %>%
+  pivot_longer(cols = Points:total, names_to = "artifact", values_to = "count") %>%
+  select(!c(Segment, Location)) %>%
+  kableExtra::kable() %>%
+  kableExtra::kable_styling() %>%
+  kableExtra::column_spec(6, background = "yellow") %>%
+  kableExtra::column_spec(7, background = "orange")
+```
+]
+
+---
+
+.pull-left[
+## What just happened?
+
+We have combined all the artifact variables to two columns.
+
+By doing this we have made the data frame longer.
+
+This gives us a row for every type of artifact within a house.
+
+]
+
+.pull-right[
+```{r pivot-longer-out3, echo=FALSE}
+pits_data %>%
+  pivot_longer(cols = Points:total, names_to = "artifact", values_to = "count") %>%
+  select(!c(Segment, Location)) %>%
+  kableExtra::kable() %>%
+  kableExtra::kable_styling() %>%
+  kableExtra::row_spec(1:6, background = "yellow") %>%
+  kableExtra::row_spec(7:12, background = "orange")
+```
+]
+
+---
+
+## Pivoting
+
+We can restore it to the wide format using `pivot_wider`
+
+We use `names_from` to re-create the variable names
+
+and `values_from` to re-create the values.
+
+```{r pivot-wider}
+pits_data_long %>%
+  pivot_wider(names_from = artifact, values_from = count)
+```
+
+---
+
+## Summarising long format
+
+We can now easily `summarise` the artifact counts.
+
+```{r summarise-long}
+pits_data_long %>%
+  group_by(artifact) %>%
+  summarise(total = sum(count, na.rm = T))
+```
+
+Again, not particularly informative...
+
+---
+class: inverse
+
+## Exercise
+
+Find the `mean` number of each `artifact` for all levels of the `Location` variable.
+
+`r emo::ji("bulb")` **Hint:** `group_by` accepts multiple arguments.
+
+--
+
+### Solution
+
+```{r long-exercise}
+pits_data_long %>%
+  group_by(artifact, Location) %>%
+  summarise(mean = mean(count, na.rm = T))
+```
+
+---
+
+## Exporting the processed data
+
+```{r include=FALSE}
+write_csv(pits_data, file = "assets/data/pits-data.csv")
+write_csv(pits_data_long, file = "assets/data/pits-data_long.csv")
+```
+
+We can save our data as a `.csv` file using `write_csv`
+
+```{r export-data, eval=FALSE}
+write_csv(pits_data, file = here("data/derived_data/pits-data.csv"))
+
+write_csv(pits_data_long, file = here("data/derived_data/pits-data_long.csv"))
+```
+

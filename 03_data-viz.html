@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data Visualisation</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="QuantArch Week 3 | 21-02-2022" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link rel="stylesheet" href="assets/css/extra.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/leiden.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/leiden-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle, title-slide, inverse
+
+
+
+
+.title-left[
+# Data Visualisation
+
+### with ggplot2
+
+#### QuantArch Week 3 | 21-02-2022
+]
+
+---
+layout: true
+class: middle
+&lt;div class='footer'&gt;
+&lt;span&gt;Discover the world at Leiden University&lt;/span&gt;
+&lt;img src='assets/img/logo.png' width=82 /&gt;
+&lt;/div&gt;
+---
+
+In case you missed last week's lecture
+
+
+```r
+pits_data_raw &lt;- readr::read_csv(here("data/house_pits_missouri.csv"), na = "N/a")
+
+pits_data &lt;- pits_data_raw %&gt;%
+  mutate(Segment = as_factor(Segment),
+         Inside = as_factor(Inside)) %&gt;%
+  rename(Location = Inside) %&gt;%
+  rowwise() %&gt;%
+  mutate(total = sum(
+    c_across(Points:Ceramics),
+    na.rm = T))
+
+pits_data_long &lt;- pits_data %&gt;%
+  pivot_longer(cols = Points:total, names_to = "artifact", values_to = "count")
+```
+
+
+---
+class: inverse
+
+## Why ggplot2?
+
+---
+
+
+
+.pull-left[
+...because these are 'base' plots
+
+![](assets/03_data-viz_files/base-pl-1-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+&lt;br&gt;
+
+![](assets/03_data-viz_files/base-pl-2-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+...and these are ggplots 😎
+
+![](assets/03_data-viz_files/ggplot-1-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+&lt;br&gt;
+
+![](assets/03_data-viz_files/ggplot-2-1.png)&lt;!-- --&gt;
+]
+
+---
+.pull-left[
+
+![](https://raw.githubusercontent.com/tidyverse/ggplot2/master/pkgdown/favicon/apple-touch-icon-120x120.png)
+
+## ggplot2 
+
+[**ggplot2**](https://ggplot2.tidyverse.org/) is a package (included in **tidyverse**) for creating highly customisable plots that are built
+step-by-step by adding layers.
+
+The separation of a plot into layers allows a high degree of flexibility with
+minimal effort.
+
+]
+
+---
+background-image: url(assets/img/ggplot2_masterpiece.png)
+background-position: 90% 50%
+background-size: 50%
+
+.pull-left[
+## Anatomy of a ggplot
+
+```r
+&lt;DATA&gt; %&gt;%
+    ggplot(aes(&lt;MAPPINGS&gt;)) +
+    &lt;GEOM_FUNCTION&gt;() +
+    &lt;CUSTOMISATION&gt;
+```
+
+.footnote[Image credit: Allison Horst]
+]
+
+---
+
+.pull-left[
+
+## Anatomy of a ggplot
+
+
+```r
+pits_data # &lt;DATA&gt;
+```
+
+]
+
+.pull-right[
+
+```
+## # A tibble: 91 × 14
+##     East South Length Width Segment Location  Area Points Abraders Discs
+##    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+##  1  901.  75.1   12    12   2       Outside   144       0        1     0
+##  2  973.  81.3   16    16   2       Outside   256       0        0     0
+##  3  890. 163.    17    18   1       Inside    306       1        0     1
+##  4  924. 193.    21    21.5 1       Inside    452.      2        1     1
+##  5  912. 217.    20.5  20   1       Inside    410       3        2     2
+##  6  940. 251.    16.5  16   1       Inside    264       0        0     0
+##  7  948. 229.    18    19   1       Inside    342       5        0     5
+##  8  962. 212.    21    19   1       Inside    399      13        0     0
+##  9  979. 194.     7.5   8   2       Outside    60       0        0     0
+## 10  992. 153.    19    15.5 2       Outside   217       1        0     0
+## # … with 81 more rows, and 4 more variables: Earplugs &lt;dbl&gt;, Effigies &lt;dbl&gt;,
+## #   Ceramics &lt;dbl&gt;, total &lt;dbl&gt;
+```
+
+]
+
+---
+
+.pull-left[
+## Anatomy of a ggplot
+
+
+```r
+pits_data %&gt;% # &lt;DATA&gt;
+  ggplot(aes(x = total, y = Area)) # &lt;MAPPINGS&gt;
+```
+]
+.pull-right[
+![](assets/03_data-viz_files/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+]
+---
+
+.pull-left[
+## Anatomy of a ggplot
+
+
+```r
+pits_data %&gt;% # &lt;DATA&gt;
+  ggplot(aes(x = total, y = Area)) + # &lt;MAPPINGS&gt;
+    geom_point() # &lt;GEOM_FUNTION&gt;
+```
+]
+
+.pull-right[
+![](assets/03_data-viz_files/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+## Anatomy of a ggplot
+
+
+```r
+pits_data %&gt;% # &lt;DATA&gt;
+  ggplot(aes(x = total, y = Area)) + # &lt;MAPPINGS&gt;
+    geom_point() + # &lt;GEOM_FUNTION&gt;
+    theme_minimal() # &lt;CUSTOMISATION&gt;
+```
+]
+
+.pull-right[
+![](assets/03_data-viz_files/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+## Anatomy of a ggplot
+
+
+```r
+pits_data %&gt;% # &lt;DATA&gt;
+  ggplot(aes(x = total, y = Area)) + # &lt;MAPPINGS&gt;
+    geom_point() + # &lt;GEOM_FUNTION&gt;
+    theme_minimal() + # &lt;CUSTOMISATION&gt;
+    labs(x = "Total number of artifacts", 
+         y = bquote('Area in ft'^2)) # &lt;CUSTOMISATION&gt;
+```
+]
+
+.pull-right[
+![](assets/03_data-viz_files/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+## Anatomy of a ggplot
+
+
+```r
+pits_data %&gt;% # &lt;DATA&gt;
+  ggplot(aes(x = total, y = Area)) + # &lt;MAPPINGS&gt;
+    geom_point() + # &lt;GEOM_FUNTION&gt;
+    theme_minimal() + # &lt;CUSTOMISATION&gt;
+    labs(x = "Total number of artifacts", 
+         y = bquote('Area in ft'^2)) # &lt;CUSTOMISATION&gt;
+```
+
+etc...
+]
+
+.pull-right[
+![](assets/03_data-viz_files/unnamed-chunk-12-1.png)&lt;!-- --&gt;
+]
+
+---
+class: inverse
+
+## Exercise
+
+Create a boxplot of the `Area` and `Location` variables with `geom_box`.
+
+--
+
+.left-code[
+
+### Solution
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot()
+```
+]
+
+.right-plot[
+![](assets/03_data-viz_files/unnamed-chunk-14-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot()
+```
+
+It's a nice overview of house pits
+
+but it's not pretty
+
+We need to add a little...
+
+![](https://media.giphy.com/media/gBa6iJFlHnYyQr5fAW/giphy.gif)
+]
+
+.pull-right[
+![](assets/03_data-viz_files/unnamed-chunk-16-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(col = "red")
+```
+
+We can add a little `col`our 🌈
+
+]
+
+.pull-right[
+![](assets/03_data-viz_files/unnamed-chunk-18-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(fill = "red")
+```
+
+We can add a little `col`our 🌈
+
+or `fill` 🎨
+
+]
+
+.pull-right[
+![](assets/03_data-viz_files/unnamed-chunk-20-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(col = "red", 
+                 fill = "orange")
+```
+
+We can add a little `col`our 🌸
+
+or `fill` 🍊
+
+or both
+
+]
+
+.pull-right[
+![](assets/03_data-viz_files/unnamed-chunk-22-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(col = c("red", "blue"), 
+                 fill = c("orange", "purple"))
+```
+
+We can add multiple `col`ours 🌈
+
+and multiple `fill`s 🎨
+]
+
+.pull-right[
+![](assets/03_data-viz_files/unnamed-chunk-24-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(col = c("eb2020", "2061eb"), 
+                 fill = c("eb9720", "8720eb"))
+```
+
+It also accepts [hex colours](https://htmlcolorcodes.com/color-picker/)
+]
+
+.pull-right[
+![](assets/03_data-viz_files/unnamed-chunk-26-1.png)&lt;!-- --&gt;
+]
+
+---
+
+An easier way to add different colours to the variables, is to add it to `aes`
+
+--
+
+This will map the variable to a colour palette
+--
+ (which can of course be customised)
+
+---
+
+.pull-left[
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Location, y = Area, 
+             col = Location)) +
+    geom_boxplot()
+```
+
+![](assets/03_data-viz_files/unnamed-chunk-27-1.png)&lt;!-- --&gt;
+
+]
+
+.pull-right[
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Location, y = Area, 
+             fill = Location)) +
+    geom_boxplot()
+```
+
+![](assets/03_data-viz_files/unnamed-chunk-28-1.png)&lt;!-- --&gt;
+
+]
+
+---
+class: inverse
+
+## Exercise
+
+Make a boxplot with the `Segment` and `Area` variables
+
+Add a `col`our or `fill` to each level of `Segment`
+
+--
+
+.left-code[
+### Solution
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Segment, y = Area, 
+             fill = Segment)) + # or col = Segment
+    geom_boxplot()
+```
+
+]
+
+.right-plot[
+![](assets/03_data-viz_files/box-fill-plot-1.png)&lt;!-- --&gt;
+]
+
+---
+
+## Adding layers
+
+--
+
+Boxplots are informative, but the information is limited
+
+--
+
+We can add more layers to the plot to add more information
+
+---
+
+.pull-left[
+## Adding layers
+
+like individual points with `geom_point`
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Segment, y = Area, 
+             fill = Segment)) + # or col = Segment
+    geom_boxplot() +
+    geom_point()
+```
+]
+
+.pull-right[
+![](assets/03_data-viz_files/box-with-points-plot-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+## Adding layers
+
+We can instead use `geom_jitter` to add random noise, so we can see all the points.
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Segment, y = Area, 
+             col = Segment)) + # change to col for visibility 
+    geom_boxplot() +
+    geom_jitter()
+```
+]
+
+.pull-right[
+![](assets/03_data-viz_files/box-with-jitter-plot-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+![](assets/03_data-viz_files/boring-box-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+![](assets/03_data-viz_files/better-box-1.png)&lt;!-- --&gt;
+]
+---
+
+.left-code[
+
+## Adding layers
+
+💀 Make sure you add layers in an order that makes sense...
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Segment, y = Area, 
+             col = Segment)) + # or col = Segment
+*   geom_jitter() +
+*   geom_boxplot()
+```
+]
+
+.right-plot[
+![](assets/03_data-viz_files/disorder-box-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.left-code[
+## Scatter plots
+
+Good for relationships between numeric variables,
+
+like `total` number of artifacts by house pit `Area`:
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Area, y = total)) +
+    geom_point() # scatter plot
+```
+]
+
+.right-plot[
+![](assets/03_data-viz_files/scatter-plot-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.left-code[
+
+## Scatter plots
+
+Good for relationships between numeric variables,
+
+like `total` number of artifacts by house pit `Area`:
+
+Add groups?
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Area, y = total, 
+*            col = Segment)) +
+    geom_point() # scatter plot
+```
+]
+
+.right-plot[
+![](assets/03_data-viz_files/scatter-plot-group-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.left-code[
+## Scatter plots
+
+Printing in black and white?
+
+Colour deficient vision?
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Area, y = total, 
+             col = Segment, 
+*            shape = Segment)) +
+    geom_point() # scatter plot
+```
+
+Add `shape` to `aes`
+]
+
+.right-plot[
+![](assets/03_data-viz_files/scatter-plot-shapes-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.left-code[
+## Scatter plots
+
+Printing in black and white?
+
+Colour deficient vision?
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Area, y = total, 
+             col = Segment, 
+             shape = Segment)) + 
+*   geom_point(size = 1.5)
+```
+
+Add `shape` to `aes`
+
+and you can increase the `size`
+
+`size` is outside `aes()` because we're not mapping a variable to it
+]
+
+.right-plot[
+![](assets/03_data-viz_files/scatter-plot-size-out-1.png)&lt;!-- --&gt;
+]
+
+
+---
+
+.left-code[
+## Bar plots
+
+Good for categorical data
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Segment)) + # no y-axis
+  geom_bar()
+```
+
+`geom_bar` counts the number of elements within the `Segment` variable,
+
+so here we're seeing number of house pits per segment.
+
+Not particularly interesting...
+]
+
+.right-plot[
+![](assets/03_data-viz_files/bar-plot-1-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.left-code[
+## Bar plots
+
+What about number of `Points` per `Segment`?
+
+We can just add `Points` as the y-axis, right?
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Segment, y = Points)) + ##&lt;
+    geom_bar()
+```
+
+]
+
+--
+
+.right-plot[
+
+```
+## &lt;error: That was of course a leading question&gt;
+```
+]
+
+---
+
+.left-code[
+## Bar plots
+
+What about number of `Points` per `Segment`?
+
+We need to use `geom_col` if we have a variable on the y-axis.
+
+
+```r
+pits_data %&gt;%
+  ggplot(aes(x = Segment, y = Points)) +
+*   geom_col()
+```
+
+]
+
+--
+
+.right-plot[
+![](assets/03_data-viz_files/points-col-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+## Bar plots
+
+What about number of `Ceramics` per segment?
+
+--
+
+And `Abraders`
+--
+, and `Discs`
+--
+, and `Earplugs`
+--
+, etc.
+
+---
+
+We need a way to easily separate by artifacts.
+
+--
+
+Luckily we already have a data frame that could be useful:
+
+--
+
+
+```r
+pits_data_long
+```
+
+```
+## # A tibble: 637 × 9
+##     East South Length Width Segment Location  Area artifact count
+##    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+##  1  901.  75.1     12    12       2 Outside    144 Points       0
+##  2  901.  75.1     12    12       2 Outside    144 Abraders     1
+##  3  901.  75.1     12    12       2 Outside    144 Discs        0
+##  4  901.  75.1     12    12       2 Outside    144 Earplugs     0
+##  5  901.  75.1     12    12       2 Outside    144 Effigies     0
+##  6  901.  75.1     12    12       2 Outside    144 Ceramics     0
+##  7  901.  75.1     12    12       2 Outside    144 total        1
+##  8  973.  81.3     16    16       2 Outside    256 Points       0
+##  9  973.  81.3     16    16       2 Outside    256 Abraders     0
+## 10  973.  81.3     16    16       2 Outside    256 Discs        0
+## # … with 627 more rows
+```
+
+---
+
+We just need to get rid of the `total` values:
+
+
+```r
+pits_data_long &lt;- pits_data_long %&gt;%
+  filter(artifact != "total")
+```
+
+--
+
+Because we don't want to include them in the `count`
+
+--
+
+(think about what would happen if we used `sum` on the `count` variable)
+
+---
+
+.left-code[
+## Visualising with long data
+
+Total artifacts per `Segment`.
+
+
+```r
+pits_data_long %&gt;%
+  ggplot(aes(x = Segment, y = count, 
+*            fill = artifact)) +
+    geom_col() +
+*   scale_fill_viridis_d()
+```
+
+Great! But we already know Segment 1 has more artifacts,
+
+and it's hard to see what's going on in 2 and 3.
+
+]
+
+.right-plot[
+![](assets/03_data-viz_files/stacked-bar-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.left-code[
+## Visualising with long data
+
+Total artifacts per `Segment`.
+
+
+```r
+pits_data_long %&gt;%
+  ggplot(aes(x = Segment, y = count, 
+*            fill = artifact)) +
+    geom_col() +
+*   scale_fill_viridis_d()
+```
+
+Great! But we already know Segment 1 has more artifacts,
+
+and it's hard to see what's going on in 2 and 3.
+
+]
+
+.right-plot[
+![](https://media.giphy.com/media/L2qukNXGjccyuAYd3W/giphy.gif)
+]
+
+---
+
+.pull-left[
+## Relative count bar plot
+
+To solve this issue, 
+
+we can calculate relative counts:
+
+
+```r
+pits_data_long %&gt;%
+  group_by(Segment, artifact) %&gt;%
+    summarise(count = sum(count, na.rm = T)) %&gt;%
+    mutate(percent = count / sum(count) * 100)
+```
+]
+.pull-right[
+
+```
+## # A tibble: 18 × 4
+## # Groups:   Segment [3]
+##    Segment artifact count percent
+##      &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+##  1       1 Abraders    21    4.24
+##  2       1 Ceramics   176   35.6 
+##  3       1 Discs       63   12.7 
+##  4       1 Earplugs    27    5.45
+##  5       1 Effigies    21    4.24
+##  6       1 Points     187   37.8 
+##  7       2 Abraders     5    8.93
+##  8       2 Ceramics    19   33.9 
+##  9       2 Discs        5    8.93
+## 10       2 Earplugs     4    7.14
+## 11       2 Effigies     4    7.14
+## 12       2 Points      19   33.9 
+## 13       3 Abraders     6   13.0 
+## 14       3 Ceramics    11   23.9 
+## 15       3 Discs        5   10.9 
+## 16       3 Earplugs     1    2.17
+## 17       3 Effigies     1    2.17
+## 18       3 Points      22   47.8
+```
+]
+---
+.left-code[
+## Relative count bar plot
+
+we can calculate relative counts:
+
+
+```r
+pits_data_long %&gt;%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col() +
+    scale_fill_viridis_d()
+```
+
+]
+
+.right-plot[
+![](assets/03_data-viz_files/relative-bar-out-1.png)&lt;!-- --&gt;
+]
+---
+
+.left-code[
+## Relative count bar plot
+
+And place it before the code for our plot:
+
+
+```r
+pits_data_long %&gt;%
+* group_by(Segment, artifact) %&gt;%
+*   summarise(count = sum(count, na.rm = T)) %&gt;%
+*   mutate(percent = count / sum(count) * 100) %&gt;%
+  ggplot(aes(x = Segment, y = percent, 
+             fill = artifact)) +
+    geom_col() +
+    scale_fill_viridis_d()
+```
+
+Interesting...
+
+There are clear differences in the absolute number of artifacts between Segments,
+
+but the relative numbers are similar.
+
+]
+
+.right-plot[
+![](assets/03_data-viz_files/relative-bar2-out-1.png)&lt;!-- --&gt;
+]
+---
+
+.left-code[
+## Relative count bar plot
+
+We can also use `geom_col(position = "fill")` to get relative counts,
+
+although with the previous method we could get a percentage.
+
+
+```r
+pits_data_long %&gt;%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+*   geom_col(position = "fill") +
+    scale_fill_viridis_d()
+```
+
+]
+
+.right-plot[
+![](assets/03_data-viz_files/relative-bar3-out-1.png)&lt;!-- --&gt;
+]
+
+---
+class: inverse
+
+## Exercise
+
+Use `geom_col(position = "dodge")` instead of `"fill"`.
+
+What are we seeing?  
+Compare to the bar with absolute counts. Is something off?
+
+---
+class: inverse
+
+.left-code[
+### Solution
+
+`position = "dodge"` puts `artifacts` side-by-side instead of stacking.
+
+The problem is that it can't deal with multiple `count` values (don't ask me why...)
+
+
+```r
+pits_data_long %&gt;%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col(position = "dodge") + # alpha for transparency
+    scale_fill_viridis_d()
+```
+]
+
+.right-plot[
+![](assets/03_data-viz_files/dodge-issue-out-1.png)&lt;!-- --&gt;
+]
+---
+class: inverse
+
+.left-code[
+### Solution
+
+`position = "dodge"` puts `artifacts` side-by-side instead of stacking.
+
+The problem is that it can't deal with multiple `count` values (don't ask me why...)
+
+So it superimposes multiple columns of the same artifact types:
+
+
+```r
+pits_data_long %&gt;%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col(position = "dodge", alpha = 0.4) + # alpha for transparency
+    scale_fill_viridis_d()
+```
+]
+
+.right-plot[
+![](assets/03_data-viz_files/dodge-issue2-out-1.png)&lt;!-- --&gt;
+]
+---
+
+## Cautionary tale
+
+Check the numbers in your data frame!
+
+![](https://media.giphy.com/media/Kper5bVx3Scfe/giphy.gif)
+
+---
+
+We could already see there was an issue with the `count` when comparing plots
+
+.pull-left[
+![](assets/03_data-viz_files/stack-plot-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+![](assets/03_data-viz_files/dodge-plot-1.png)&lt;!-- --&gt;
+]
+
+---
+
+And a quick summary of artifacts could show us which plot was off:
+
+
+```r
+pits_data_long %&gt;%
+  group_by(Location, artifact) %&gt;%
+  summarise(count = sum(count, na.rm = T))
+```
+
+```
+## # A tibble: 12 × 3
+## # Groups:   Location [2]
+##    Location artifact count
+##    &lt;chr&gt;    &lt;chr&gt;    &lt;dbl&gt;
+##  1 Inside   Abraders    21
+##  2 Inside   Ceramics   176
+##  3 Inside   Discs       63
+##  4 Inside   Earplugs    27
+##  5 Inside   Effigies    21
+##  6 Inside   Points     187
+##  7 Outside  Abraders    11
+##  8 Outside  Ceramics    30
+##  9 Outside  Discs       10
+## 10 Outside  Earplugs     5
+## 11 Outside  Effigies     5
+## 12 Outside  Points      41
+```
+
+---
+class: inverse
+
+## Exercise
+
+Find a way to use `geom_col(position = "dodge")`
+
+--
+
+💡 **Hint:** Create a summary data frame like we did for
+the relative bar plot.
+
+---
+class: inverse
+
+.left-code[
+### Solution
+
+
+```r
+pits_data_long %&gt;%
+* group_by(Segment, artifact) %&gt;%
+* summarise(count = sum(count, na.rm = T)) %&gt;%
+  ggplot(aes(x = Segment, y = count, fill = artifact)) +
+    geom_col(position = "dodge") +
+    scale_fill_viridis_d()
+```
+]
+
+.right-plot[
+![](assets/03_data-viz_files/dodge-exercise-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.left-code[
+## Prettification
+
+Now let's make it look a little nicer!
+
+Starting with relative counts:
+
+
+```r
+pits_data_long %&gt;%
+  group_by(Segment, artifact) %&gt;%
+  summarise(count = sum(count, na.rm = T)) %&gt;% 
+* mutate(percent = count / sum(count) * 100) %&gt;%
+  ggplot(aes(x = Segment, y = percent, fill = artifact)) +
+    geom_col(position = "dodge") +
+    scale_fill_viridis_d()
+```
+]
+
+.right-plot[
+![](assets/03_data-viz_files/dodge-relative-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+## Prettification
+
+To make life easier, we can store the current plot
+
+
+```r
+my_little_plot &lt;- pits_data_long %&gt;%
+  group_by(Segment, artifact) %&gt;%
+  summarise(count = sum(count, na.rm = T)) %&gt;%
+  mutate(percent = count / sum(count) * 100) %&gt;%
+  ggplot(aes(x = Segment, y = percent, fill = artifact)) +
+    geom_col(position = "dodge") +
+    scale_fill_viridis_d()
+```
+
+--
+
+And start customising
+
+---
+
+.left-code[
+## Prettification
+
+Flipping the axes increases readability (in my opinion)
+
+
+```r
+my_little_plot +
+  coord_flip()
+```
+
+]
+
+.right-plot[
+![](assets/03_data-viz_files/pretty-plot4-out-1.png)&lt;!-- --&gt;
+]
+
+
+---
+
+.left-code[
+## Prettification
+
+We can change the background:
+
+
+```r
+my_little_plot +
+  coord_flip() +
+  theme_minimal()
+```
+]
+
+.right-plot[
+![](assets/03_data-viz_files/pretty-plot1-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.left-code[
+## Prettification
+
+Let's fix the `lab`els
+
+
+```r
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+  labs(x = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot")
+```
+
+]
+
+.right-plot[
+![](assets/03_data-viz_files/pretty-plot2-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.left-code[
+## Prettification
+
+We can use `theme` to make changes to specific elements
+
+such as font size
+
+
+```r
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+  labs(x = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot") +
+  theme(plot.title = element_text(size = 20))
+```
+
+]
+
+.right-plot[
+![](assets/03_data-viz_files/pretty-plot-font-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.left-code[
+## Prettification
+
+We can use `theme` to make changes to specific elements
+
+and alignment
+
+
+```r
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+  labs(y = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot") +
+  theme(plot.title = element_text(size = 20, 
+                                  hjust = 0.5))
+```
+
+]
+
+.right-plot[
+![](assets/03_data-viz_files/pretty-plot-align-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+.pull-left[
+## Prettification
+
+We can use `theme` to make changes to specific elements
+
+we can remove elements with `element_blank`, like unnecessary gridlines
+
+
+```r
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank()) +
+  labs(y = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot") +
+  theme(plot.title = element_text(size = 20, 
+                                  hjust = 0.5),
+        panel.grid.major = element_blank())
+```
+
+]
+
+.pull-right[
+![](assets/03_data-viz_files/pretty-plot-line-out-1.png)&lt;!-- --&gt;
+]
+
+---
+
+And much MUCH more...
+
+--
+
+
+```r
+args(theme)
+```
+
+```
+## function (line, rect, text, title, aspect.ratio, axis.title, 
+##     axis.title.x, axis.title.x.top, axis.title.x.bottom, axis.title.y, 
+##     axis.title.y.left, axis.title.y.right, axis.text, axis.text.x, 
+##     axis.text.x.top, axis.text.x.bottom, axis.text.y, axis.text.y.left, 
+##     axis.text.y.right, axis.ticks, axis.ticks.x, axis.ticks.x.top, 
+##     axis.ticks.x.bottom, axis.ticks.y, axis.ticks.y.left, axis.ticks.y.right, 
+##     axis.ticks.length, axis.ticks.length.x, axis.ticks.length.x.top, 
+##     axis.ticks.length.x.bottom, axis.ticks.length.y, axis.ticks.length.y.left, 
+##     axis.ticks.length.y.right, axis.line, axis.line.x, axis.line.x.top, 
+##     axis.line.x.bottom, axis.line.y, axis.line.y.left, axis.line.y.right, 
+##     legend.background, legend.margin, legend.spacing, legend.spacing.x, 
+##     legend.spacing.y, legend.key, legend.key.size, legend.key.height, 
+##     legend.key.width, legend.text, legend.text.align, legend.title, 
+##     legend.title.align, legend.position, legend.direction, legend.justification, 
+##     legend.box, legend.box.just, legend.box.margin, legend.box.background, 
+##     legend.box.spacing, panel.background, panel.border, panel.spacing, 
+##     panel.spacing.x, panel.spacing.y, panel.grid, panel.grid.major, 
+##     panel.grid.minor, panel.grid.major.x, panel.grid.major.y, 
+##     panel.grid.minor.x, panel.grid.minor.y, panel.ontop, plot.background, 
+##     plot.title, plot.title.position, plot.subtitle, plot.caption, 
+##     plot.caption.position, plot.tag, plot.tag.position, plot.margin, 
+##     strip.background, strip.background.x, strip.background.y, 
+##     strip.placement, strip.text, strip.text.x, strip.text.y, 
+##     strip.switch.pad.grid, strip.switch.pad.wrap, ..., complete = FALSE, 
+##     validate = TRUE) 
+## NULL
+```
+
+---
+
+.pull-left[
+
+### Before
+
+![](assets/03_data-viz_files/plot-before-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+
+### After
+
+![](assets/03_data-viz_files/plot-after-1.png)&lt;!-- --&gt;
+]
+
+---
+class: center
+
+![](https://media.giphy.com/media/3ohzAhuS5LMbnuJEt2/giphy.gif)
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"slideNumberFormat": ""
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

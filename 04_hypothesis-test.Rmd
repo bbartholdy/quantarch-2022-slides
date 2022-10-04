@@ -1,0 +1,637 @@
+---
+title: "Hypothesis Testing"
+subtitle: "Part 1: One and two sample t-tests"
+author: ""
+faculty: "Archaeology"
+date: "QuantArch Week 5 | 07-03-2022"
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    #chakra: libs/remark-latest.min.js # for offline usage
+    css: [assets/css/extra.css, assets/css/leiden.css, assets/css/leiden-fonts.css]
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: ""
+---
+class: middle, title-slide, inverse
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(broom)
+knitr::opts_chunk$set(message = FALSE,
+                      warning = FALSE,
+                      fig.path = "assets/04_hypothesis-test_files/")
+pits_data_raw <- readr::read_csv("assets/data/house_pits_missouri.csv", na = "N/a")
+pits_data_long <- readr::read_csv("assets/data/pits-data_long.csv")
+pits_data <- readr::read_csv("assets/data/pits-data.csv")
+pits_data$Segment <- as.factor(pits_data$Segment)
+  # pits_data_raw %>%
+  # mutate(Segment = as_factor(Segment),
+  #        Inside = as_factor(Inside)) %>%
+  # rename(Location = Inside) %>%
+  # rowwise() %>%
+  # mutate(total = sum(
+  #   c_across(Points:Ceramics),
+  #   na.rm = T))
+faculty_cols <- data.frame(faculty = c("Social & Behavioural Sciences", "Science",
+                                       "Humanities", "Archaeology", 
+                                       "Governance and Global Affairs", "Medicine",
+                                       "Law"),
+                           colour = c("#be1908", "#f46e32", "#aaad00", "#2c712d",
+                                      "#34a3a9", "#5cb1eb", "#b02079"))
+
+m1 <- match(faculty_cols$faculty, rmarkdown::metadata$faculty)
+m1 <- !is.na(m1)
+accent_col <- faculty_cols$colour[m1]
+# xaringanthemer::style_xaringan(text_bold_color = accent_col, 
+#                                outfile = "assets/css/extra.css")
+colorize <- function(x, color) {
+    sprintf("<span style='color: %s;'>%s</span>", color, x)
+}
+```
+
+
+.title-left[
+# `r rmarkdown::metadata$title`
+
+### `r rmarkdown::metadata$subtitle`
+
+#### `r rmarkdown::metadata$date`
+]
+
+---
+layout: true
+class: middle
+<div class='footer'>
+<span>Discover the world at Leiden University</span>
+<img src='assets/img/logo.png' width=82 />
+</div>
+---
+
+```{r echo=FALSE}
+xaringanExtra::use_progress_bar(color = "#2c712d")
+```
+
+## One sample t test
+
+$$ t = \frac{ \bar{x} - \mu }{s_x}\space \space \space \space \space \space  s_x = \frac{s}{\sqrt{n}} $$
+
+---
+
+## One sample t test
+
+Let's test the `Area` variable against a population mean.
+
+---
+
+Wait... have you uploaded your data?
+
+--
+
+```{r eval=FALSE}
+pits_data <- readr::read_csv(here("data/derived_data/pits-data.csv"))
+```
+
+---
+
+## One sample t test
+
+Let's test the `Area` variable against a population mean.
+
+--
+
+We will randomly generate the true population mean $\mu$ from a normal distribution.
+
+```{r}
+set.seed(42) # make sure we generate the same number every time
+(pop_mean <- rnorm(1, mean = mean(pits_data$Area, na.rm = T), 1))
+```
+
+--
+
+The mean of Area is `mean(pits_data$Area, na.rm = T)` = **`r mean(pits_data$Area, na.rm = T)`**
+
+The standard deviation is `sd(pits_data$Area, na.rm = T)` = **`r sd(pits_data$Area, na.rm = T)`**
+
+The sample size is `length(!is.na(pits_data$Area))` = **`r length(!is.na(pits_data$Area))`**
+
+---
+
+## One sample t-test
+
+$$ t = \frac{ \bar{x} - \mu }{s_x} \space \space \space \space \space \space  s_x = \frac{s}{\sqrt{n}} $$
+
+Now we can just run that through our calculatoR...
+
+--
+
+```{r}
+t_stat <- (237.568 - 238.939) / (94.500 / sqrt(91))
+```
+
+--
+
+Our t-statistic is **`r t_stat`**
+
+---
+class: inverse
+
+.center[ ![](https://media.giphy.com/media/NaboQwhxK3gMU/giphy.gif) ]
+
+---
+
+.left-column[
+$$ t = \frac{ \bar{x} - \mu }{s_x} $$
+]
+
+## One sample t-test: A better option
+
+--
+
+We can translate the t-test equation to code
+
+--
+
+First the nominator (or difference in means)
+
+--
+
+```{r}
+t_nom <- mean(pits_data$Area, na.rm = T) - pop_mean
+```
+
+--
+
+then the sample standard deviation
+
+```{r}
+sd_sample <- sd(pits_data$Area, na.rm = T)
+```
+
+--
+
+and the sample size... why `sum` not `length`?
+
+```{r}
+n_sample <- sum(!is.na(pits_data$Area))
+```
+
+--
+
+Put it together
+
+```{r}
+t_stat <- t_nom / (sd_sample / sqrt(n_sample))
+```
+
+Our t-statistic is **`r t_stat`**.
+
+---
+
+## Now how do we evaluate the t-statistic?
+
+We can calculate the critical t-value
+
+--
+
+First we set out $\alpha$.
+--
+ Let's say 0.047212
+--
+... it's just as arbitrary as 0.05
+
+--
+
+```{r}
+alpha <- 0.047212
+```
+
+--
+
+Now we use the alpha and the degrees of freedom (df) to calculate the critical t-value
+
+--
+
+```{r}
+qt(1 - alpha, n_sample - 1)
+```
+
+---
+
+Let's see where our t-value falls within the t-distribution with the calculate critical t-values.
+
+--
+
+```{r t-dist, echo=FALSE, fig.align='center'}
+custom <- function(x) {dt(x, 90)}
+ggplot(data.frame(x = c(-4, 4)), aes(x = x), fill = "blue") +
+  stat_function(fun = custom) +
+  geom_vline(xintercept = qt(1 - alpha, n_sample - 1), linetype = "dashed") +
+  geom_vline(xintercept = -qt(1 - alpha, n_sample - 1), linetype = "dashed") +
+  geom_vline(xintercept = t_stat, col = "red") +
+  theme_minimal() +
+  labs(y = "", x = "") +
+  theme(axis.text.y = element_blank())
+```
+
+---
+
+#### Can we use this method to calculate t for other variables, too?
+
+--
+
+.center[ ![](https://media.giphy.com/media/xUPGcvWUuhxaQQMme4/giphy.gif) ]
+
+---
+
+## One sample t-test: A betterer option
+
+--
+
+### Functions
+
+We can create a function!
+
+--
+
+Starting with a name
+
+```{r eval=FALSE}
+t_stat <- function(){
+  # body of the function
+}
+```
+
+--
+
+Then we can take the code we used earlier,
+
+```{r}
+ t_nom <- mean(pits_data$Area, na.rm = T) - pop_mean
+ sd_sample <- sd(pits_data$Area, na.rm = T)
+ n_sample <- sum(!is.na(pits_data$Area))
+ t_stat <- t_nom / (sd_sample / sqrt(n_sample))
+```
+
+---
+
+## One sample t-test: A betterer option
+
+### Functions
+
+We can create a function!
+
+Starting with a name
+
+```{r eval=FALSE}
+t_stat <- function(){
+  # body of the function
+}
+```
+
+Then we can take the code we used earlier, and put it inside the
+body of the function
+
+```{r}
+t_calc <- function(){
+  t_nom <- mean(pits_data$Area, na.rm = T) - pop_mean #<<
+  sd_sample <- sd(pits_data$Area, na.rm = T) #<<
+  n_sample <- sum(!is.na(pits_data$Area)) #<<
+  t_stat <- t_nom / (sd_sample / sqrt(n_sample)) #<<
+}
+```
+
+---
+
+## One sample t-test: A betterer option
+
+### Functions
+
+and now we just need the value we want the function to `return`.
+
+--
+
+```{r}
+t_calc <- function(){
+  t_nom <- mean(pits_data$Area, na.rm = T) - pop_mean
+  sd_sample <- sd(pits_data$Area, na.rm = T)
+  n_sample <- sum(!is.na(pits_data$Area))
+  t_stat <- t_nom / (sd_sample / sqrt(n_sample))
+}
+```
+
+---
+
+## One sample t-test: A betterer option
+
+### Functions
+
+we need to specify which object we want the function to `return`.
+
+```{r}
+t_calc <- function(){
+  t_nom <- mean(pits_data$Area, na.rm = T) - pop_mean
+  sd_sample <- sd(pits_data$Area, na.rm = T)
+  n_sample <- sum(!is.na(pits_data$Area))
+  t_stat <- t_nom / (sd_sample / sqrt(n_sample))
+  return(t_stat) #<<
+}
+```
+
+--
+
+We can run the function by calling its name
+
+```{r}
+t_calc()
+```
+
+---
+
+## One sample t-test: A betterer option
+
+### Functions
+
+To make sure we can use the same function for different variables
+--
+, we need to give it arguments and remove `Area`-specific objects
+
+```{r}
+t_calc <- function(){
+  t_nom <- mean(pits_data$Area, na.rm = T) - pop_mean
+  sd_sample <- sd(pits_data$Area, na.rm = T)
+  n_sample <- sum(!is.na(pits_data$Area))
+  t_stat <- t_nom / (sd_sample / sqrt(n_sample))
+  return(t_stat)
+}
+```
+
+---
+
+## One sample t-test: A betterer option
+
+### Functions
+
+To make sure we can use the same function for different variables,
+we need to give it arguments and remove `Area`-specific objects
+
+```{r}
+t_calc <- function(variable, pop_mean){ #<<
+  t_nom <- mean(variable, na.rm = T) - pop_mean #<<
+  sd_sample <- sd(pits_data$Area, na.rm = T)
+  n_sample <- sum(!is.na(pits_data$Area))
+  t_stat <- t_nom / (sd_sample / sqrt(n_sample))
+  return(t_stat)
+}
+```
+
+---
+
+## One sample t-test: A betterer option
+
+### Functions
+
+To make sure we can use the same function for different variables,
+we need to give it arguments and remove `Area`-specific objects
+
+```{r}
+t_calc <- function(variable, pop_mean){
+  t_nom <- mean(variable, na.rm = T) - pop_mean
+  sd_sample <- sd(variable, na.rm = T) #<<
+  n_sample <- sum(!is.na(variable)) #<<
+  t_stat <- t_nom / (sd_sample / sqrt(n_sample))
+  return(t_stat)
+}
+```
+
+---
+
+## One sample t-test: A betterer option
+
+### Functions
+
+To make sure we can use the same function for different variables,
+we need to give it arguments and remove `Area`-specific objects
+
+```{r}
+t_calc <- function(variable, pop_mean){
+  t_nom <- mean(variable, na.rm = T) - pop_mean
+  sd_sample <- sd(variable, na.rm = T)
+  n_sample <- sum(!is.na(variable))
+  t_stat <- t_nom / (sd_sample / sqrt(n_sample)) #<<
+  return(t_stat)
+}
+```
+
+The last two lines don't need changing, because all the objects are calculated
+within the function.
+
+---
+class: inverse
+
+## Exercise
+
+Use the function to calculate the t-statistic and critical t-value for `Points`
+
+We'll pretend that the true population mean is <b>1.72</b>,
+and we'll set our $\alpha$ at <b>0.05</b>.
+
+--
+
+### Solution
+
+```{r}
+# t-statistic
+t_stat <- t_calc(pits_data$Points, 1.72)
+t_stat
+# p-value
+alpha <- 0.05
+df <- sum(!is.na(pits_data$Points)) - 1
+qt(1 - alpha, df)
+```
+
+---
+
+## Break
+
+---
+
+.left-code[
+## Evaluating the t-statistic
+
+Let's look at the critical values for our `Points` statistic.
+
+As you may be able to tell, the overall process is not a dichotomy. ]
+
+.right-plot[
+```{r t-dist2, echo=FALSE, fig.align='center'}
+custom <- function(x) {dt(x, 90)}
+ggplot(data.frame(x = c(-4, 4)), aes(x = x), fill = "blue") +
+  stat_function(fun = custom) +
+  geom_vline(xintercept = qt(1 - alpha, n_sample - 1), linetype = "dashed") +
+  geom_vline(xintercept = -qt(1 - alpha, n_sample - 1), linetype = "dashed") +
+  geom_vline(xintercept = t_stat, col = "red") +
+  theme_minimal() +
+  labs(y = "", x = "") +
+  theme(axis.text.y = element_blank())
+```
+]
+---
+
+## Evaluating the t-statistic
+
+As you may be able to tell, the overall process is not a dichotomy.
+
+We can produce a probability value of the data/estimate in relation to the 'null hypothesis'.
+
+--
+
+### p-value
+
+>*Informally, a p-value is the probability under a specified statistical model that a statistical summary of the data (e.g., the sample mean difference between two compared groups) would be equal to or more extreme than its observed value.* (American Statistical Association)
+
+--
+
+The p-value is NOT the probability of your hypothesis.
+--
+ Or any hypothesis for that matter...
+
+---
+
+## Evaluating the t-statistic
+
+Our $\alpha$ determines the critical threshold for our p-value in order to reject the null hypothesis.
+
+--
+
+Our $\alpha$ from the previous example is `r alpha`,
+
+--
+
+which means we need a p-value equal to, or lower than `r alpha`.
+
+--
+
+### Calculating the p-value
+
+--
+
+```{r}
+2 * pt(-abs(t_stat), n_sample - 1)
+```
+
+---
+class: inverse
+
+## Two sample t-test
+
+---
+class: inverse
+
+## Exercise
+
+Create a function to calculate the t-statistic of a two sample t-test
+
+$$ t = \frac{\bar{x} - \bar{y}}{s_{x-y}} $$ 
+
+$$ s_{x-y} = \sqrt{\frac{(n_x - 1)s_x^2 + (n_y - 1)s_y^2}{n_x + n_y - 2}{(\frac{1}{n_x} + \frac{1}{n_y})}} $$
+
+`r emo::ji("bulb")` <b>Hint:</b> Code > Rainbow Parentheses 
+
+---
+class: inverse
+### Solution
+
+```{r}
+t_calc2 <- function(x, y){
+  mean_x <- mean(x, na.rm = T)
+  mean_y <- mean(y, na.rm = T)
+  n_x <- sum(!is.na(x))
+  n_y <- sum(!is.na(y))
+  s_x <- sd(x, na.rm = T)
+  s_y <- sd(y, na.rm = T)
+  
+  s_xy <- sqrt( 
+    (((n_x-1)*s_x^2 + (n_y-1)*s_y^2) /
+      (n_x + n_y -2)) *
+      (n_x^-1 + n_y^-1)
+    )
+  t_stat <- (mean_x - mean_y) / s_xy
+  return(t_stat)
+}
+```
+
+---
+
+## Two sample t-test
+
+Now let's compare Areas of each `Location`.
+
+--
+
+```{r}
+inside <- filter(pits_data, Location == "Inside")
+outside <- filter(pits_data, Location == "Outside")
+t_stat2 <- t_calc2(inside$Area, outside$Area)
+t_stat2
+
+df <- sum(!is.na(pits_data$Area)) - 1
+p_value <- 2 * pt(-abs(t_stat2), df = df)
+p_value
+```
+
+---
+
+We can check our results from the one and two sample t-tests with the built-in function `t.test`
+
+For a one sample test we need to specify `mu`
+
+```{r}
+pop_mean <- 238.9387
+t.test(pits_data$Area, mu = pop_mean)
+```
+
+---
+
+For a two sample test we need the two variables we are comparing (and `var.equal = T` for now).
+
+```{r}
+t.test(inside$Area, outside$Area, var.equal = T)
+```
+
+---
+
+.center[ ![](https://media.giphy.com/media/g0HZGqnePGRww8hQdg/giphy.gif) ]
+
+Yes, we could have done that all along...
+
+--
+
+But you learned something along the way, right?
+--
+ ...right??
+
+---
+
+## Reporting results
+
+The mean area of house pits Inside (m = `r signif(mean(inside$Area, na.rm=T),3)`) the "white wall" is
+`r signif(mean(inside$Area, na.rm=T) - mean(outside$Area, na.rm=T),3)` sqft larger than the mean
+area of houses outside (m = `r signif(mean(outside$Area, na.rm=T),3)`) the "white wall",
+*t*(`r df`) = `r round(t_stat2,2)`, *p* < 0.001,
+95%CI(`r paste(signif(t.test(inside$Area, outside$Area, var.equal = T)$conf.int[1:2], 3), sep = ",")`).
+
+**Note:** Report exact p-value if *p* > 0.001
+
+--
+
+Or a table
+
+```{r}
+t.test(inside$Area, outside$Area, var.equal = T) %>%
+  tidy()
+```

@@ -1,0 +1,1501 @@
+---
+title: "Data Visualisation"
+subtitle: "with ggplot2"
+author: "QuantArch Week 3 | 21-02-2022"
+faculty: "Archaeology"
+date: "TBD (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    #chakra: libs/remark-latest.min.js # for offline usage
+    css: [assets/css/extra.css, assets/css/leiden.css, assets/css/leiden-fonts.css]
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: ""
+---
+class: middle, title-slide, inverse
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(message = FALSE,
+                      warning = FALSE,
+                      fig.path = "assets/03_data-viz_files/")
+pits_data_raw <- readr::read_csv("assets/data/house_pits_missouri.csv", na = "N/a")
+pits_data_long <- readr::read_csv("assets/data/pits-data_long.csv")
+pits_data <- readr::read_csv("assets/data/pits-data.csv")
+pits_data$Segment <- as.factor(pits_data$Segment)
+  # pits_data_raw %>%
+  # mutate(Segment = as_factor(Segment),
+  #        Inside = as_factor(Inside)) %>%
+  # rename(Location = Inside) %>%
+  # rowwise() %>%
+  # mutate(total = sum(
+  #   c_across(Points:Ceramics),
+  #   na.rm = T))
+faculty_cols <- data.frame(faculty = c("Social & Behavioural Sciences", "Science",
+                                       "Humanities", "Archaeology", 
+                                       "Governance and Global Affairs", "Medicine",
+                                       "Law"),
+                           colour = c("#be1908", "#f46e32", "#aaad00", "#2c712d",
+                                      "#34a3a9", "#5cb1eb", "#b02079"))
+
+m1 <- match(faculty_cols$faculty, rmarkdown::metadata$faculty)
+m1 <- !is.na(m1)
+accent_col <- faculty_cols$colour[m1]
+# xaringanthemer::style_xaringan(text_bold_color = accent_col, 
+#                                outfile = "assets/css/extra.css")
+colorize <- function(x, color) {
+    sprintf("<span style='color: %s;'>%s</span>", color, x)
+}
+```
+
+
+.title-left[
+# `r rmarkdown::metadata$title`
+
+### `r rmarkdown::metadata$subtitle`
+
+#### `r rmarkdown::metadata$author`
+]
+
+---
+layout: true
+class: middle
+<div class='footer'>
+<span>Discover the world at Leiden University</span>
+<img src='assets/img/logo.png' width=82 />
+</div>
+---
+
+In case you missed last week's lecture
+
+```{r recap, eval=FALSE}
+pits_data_raw <- readr::read_csv(here("data/house_pits_missouri.csv"), na = "N/a")
+
+pits_data <- pits_data_raw %>%
+  mutate(Segment = as_factor(Segment),
+         Inside = as_factor(Inside)) %>%
+  rename(Location = Inside) %>%
+  rowwise() %>%
+  mutate(total = sum(
+    c_across(Points:Ceramics),
+    na.rm = T))
+
+pits_data_long <- pits_data %>%
+  pivot_longer(cols = Points:total, names_to = "artifact", values_to = "count")
+```
+
+
+---
+class: inverse
+
+## Why ggplot2?
+
+---
+
+
+
+.pull-left[
+...because these are 'base' plots
+
+```{r base-pl-1, echo=FALSE}
+plot(Area ~ total, 
+     pits_data)
+```
+]
+
+.pull-right[
+<br>
+
+```{r base-pl-2, echo=FALSE}
+boxplot(Area ~ Location, 
+        pits_data, 
+        col = c("blue", "green"))
+```
+]
+
+---
+
+.pull-left[
+...and these are ggplots `r emo::ji("sunglasses")`
+
+```{r ggplot-1, echo=FALSE, message=FALSE, warning=FALSE}
+pits_data %>% 
+   ggplot(aes(x = total, y = Area, col = Location, shape = Location)) +
+      geom_point() +
+      theme_bw() +
+      scale_colour_viridis_d(begin = 0.4) +
+      labs(x = "Total artefacts")
+```
+]
+
+.pull-right[
+<br>
+
+```{r ggplot-2, echo=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_violin(aes(fill = Location)) +
+    geom_boxplot(width = 0.2) +
+    theme_minimal() +
+    scale_fill_viridis_d(begin = 0.4) +
+    theme(legend.position = "none",
+        panel.grid.major.x = element_blank())
+```
+]
+
+---
+.pull-left[
+
+![](https://raw.githubusercontent.com/tidyverse/ggplot2/master/pkgdown/favicon/apple-touch-icon-120x120.png)
+
+## ggplot2 
+
+[**ggplot2**](https://ggplot2.tidyverse.org/) is a package (included in **tidyverse**) for creating highly customisable plots that are built
+step-by-step by adding layers.
+
+The separation of a plot into layers allows a high degree of flexibility with
+minimal effort.
+
+]
+
+---
+background-image: url(assets/img/ggplot2_masterpiece.png)
+background-position: 90% 50%
+background-size: 50%
+
+.pull-left[
+## Anatomy of a ggplot
+
+```r
+<DATA> %>%
+    ggplot(aes(<MAPPINGS>)) +
+    <GEOM_FUNCTION>() +
+    <CUSTOMISATION>
+```
+
+.footnote[Image credit: Allison Horst]
+]
+
+---
+
+.pull-left[
+
+## Anatomy of a ggplot
+
+```{r eval=FALSE}
+pits_data # <DATA>
+```
+
+]
+
+.pull-right[
+```{r echo=FALSE}
+pits_data
+```
+
+]
+
+---
+
+.pull-left[
+## Anatomy of a ggplot
+
+```{r eval=FALSE}
+pits_data %>% # <DATA>
+  ggplot(aes(x = total, y = Area)) # <MAPPINGS>
+```
+]
+.pull-right[
+```{r echo=FALSE}
+pits_data %>% # <DATA>
+  ggplot(aes(x = total, y = Area)) # <MAPPINGS>
+```
+]
+---
+
+.pull-left[
+## Anatomy of a ggplot
+
+```{r eval=FALSE}
+pits_data %>% # <DATA>
+  ggplot(aes(x = total, y = Area)) + # <MAPPINGS>
+    geom_point() # <GEOM_FUNTION>
+```
+]
+
+.pull-right[
+```{r echo=FALSE, warning=FALSE}
+pits_data %>% # <DATA>
+  ggplot(aes(x = total, y = Area)) + # <MAPPINGS>
+    geom_point() # <GEOM_FUNTION>
+```
+]
+
+---
+
+.pull-left[
+## Anatomy of a ggplot
+
+```{r eval=FALSE}
+pits_data %>% # <DATA>
+  ggplot(aes(x = total, y = Area)) + # <MAPPINGS>
+    geom_point() + # <GEOM_FUNTION>
+    theme_minimal() # <CUSTOMISATION>
+```
+]
+
+.pull-right[
+```{r echo=FALSE, warning=FALSE}
+pits_data %>% # <DATA>
+  ggplot(aes(x = total, y = Area)) + # <MAPPINGS>
+    geom_point() + # <GEOM_FUNTION>
+    theme_minimal() # <CUSTOMISATION>
+```
+]
+
+---
+
+.pull-left[
+## Anatomy of a ggplot
+
+```{r eval=FALSE}
+pits_data %>% # <DATA>
+  ggplot(aes(x = total, y = Area)) + # <MAPPINGS>
+    geom_point() + # <GEOM_FUNTION>
+    theme_minimal() + # <CUSTOMISATION>
+    labs(x = "Total number of artifacts", 
+         y = bquote('Area in ft'^2)) # <CUSTOMISATION>
+```
+]
+
+.pull-right[
+```{r echo=FALSE, warning=FALSE}
+pits_data %>% # <DATA>
+  ggplot(aes(x = total, y = Area)) + # <MAPPINGS>
+    geom_point() + # <GEOM_FUNTION>
+    theme_minimal() + # <CUSTOMISATION>
+    labs(x = "Total number of artifacts", 
+         y = bquote('Area in ft'^2)) # <CUSTOMISATION>
+```
+]
+
+---
+
+.pull-left[
+## Anatomy of a ggplot
+
+```{r eval=FALSE}
+pits_data %>% # <DATA>
+  ggplot(aes(x = total, y = Area)) + # <MAPPINGS>
+    geom_point() + # <GEOM_FUNTION>
+    theme_minimal() + # <CUSTOMISATION>
+    labs(x = "Total number of artifacts", 
+         y = bquote('Area in ft'^2)) # <CUSTOMISATION>
+```
+
+etc...
+]
+
+.pull-right[
+```{r echo=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = total, y = Area)) + 
+    geom_point() + 
+    theme_minimal() +
+    labs(x = "Total number of artifacts", 
+         y = bquote('Area in ft'^2))
+```
+]
+
+---
+class: inverse
+
+## Exercise
+
+Create a boxplot of the `Area` and `Location` variables with `geom_box`.
+
+--
+
+.left-code[
+
+### Solution
+
+```{r eval=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot()
+```
+]
+
+.right-plot[
+```{r echo=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot()
+```
+]
+
+---
+
+.pull-left[
+```{r eval=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot()
+```
+
+It's a nice overview of house pits
+
+but it's not pretty
+
+We need to add a little...
+
+![](https://media.giphy.com/media/gBa6iJFlHnYyQr5fAW/giphy.gif)
+]
+
+.pull-right[
+```{r echo=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot()
+```
+]
+
+---
+
+.pull-left[
+```{r eval=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(col = "red")
+```
+
+We can add a little `col`our `r emo::ji("rainbow")`
+
+]
+
+.pull-right[
+```{r echo=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(col = "red")
+```
+]
+
+---
+
+.pull-left[
+```{r eval=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(fill = "red")
+```
+
+We can add a little `col`our `r emo::ji("rainbow")`
+
+or `fill` `r emo::ji("paint")`
+
+]
+
+.pull-right[
+```{r echo=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(fill = "red")
+```
+]
+
+---
+
+.pull-left[
+```{r eval=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(col = "red", 
+                 fill = "orange")
+```
+
+We can add a little `col`our `r emo::ji("cherry")`
+
+or `fill` `r emo::ji("orange")`
+
+or both
+
+]
+
+.pull-right[
+```{r echo=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(col = "red", fill = "orange")
+```
+]
+
+---
+
+.pull-left[
+```{r eval=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(col = c("red", "blue"), 
+                 fill = c("orange", "purple"))
+```
+
+We can add multiple `col`ours `r emo::ji("rainbow")`
+
+and multiple `fill`s `r emo::ji("paint")`
+]
+
+.pull-right[
+```{r echo=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(col = c("red", "blue"), fill = c("orange", "purple"))
+```
+]
+
+---
+
+.pull-left[
+```{r eval=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(col = c("eb2020", "2061eb"), 
+                 fill = c("eb9720", "8720eb"))
+```
+
+It also accepts [hex colours](https://htmlcolorcodes.com/color-picker/)
+]
+
+.pull-right[
+```{r echo=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area)) +
+    geom_boxplot(col = c("#eb2020", "#2061eb"), 
+                 fill = c("#eb9720", "#8720eb"))
+```
+]
+
+---
+
+An easier way to add different colours to the variables, is to add it to `aes`
+
+--
+
+This will map the variable to a colour palette
+--
+ (which can of course be customised)
+
+---
+
+.pull-left[
+
+```{r warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area, 
+             col = Location)) +
+    geom_boxplot()
+```
+
+]
+
+.pull-right[
+
+```{r warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Location, y = Area, 
+             fill = Location)) +
+    geom_boxplot()
+```
+
+]
+
+---
+class: inverse
+
+## Exercise
+
+Make a boxplot with the `Segment` and `Area` variables
+
+Add a `col`our or `fill` to each level of `Segment`
+
+--
+
+.left-code[
+### Solution
+
+```{r box-fill-exercise, eval=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Area, 
+             fill = Segment)) + # or col = Segment
+    geom_boxplot()
+```
+
+]
+
+.right-plot[
+```{r box-fill-plot, echo=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Area, 
+             fill = Segment)) + # or col = Segment
+    geom_boxplot()
+```
+]
+
+---
+
+## Adding layers
+
+--
+
+Boxplots are informative, but the information is limited
+
+--
+
+We can add more layers to the plot to add more information
+
+---
+
+.pull-left[
+## Adding layers
+
+like individual points with `geom_point`
+
+```{r box-with-points, eval=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Area, 
+             fill = Segment)) + # or col = Segment
+    geom_boxplot() +
+    geom_point()
+```
+]
+
+.pull-right[
+```{r box-with-points-plot, echo=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Area, 
+             fill = Segment)) + # or col = Segment
+    geom_boxplot() +
+    geom_point()
+```
+]
+
+---
+
+.pull-left[
+## Adding layers
+
+We can instead use `geom_jitter` to add random noise, so we can see all the points.
+
+```{r box-with-jitter, eval=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Area, 
+             col = Segment)) + # change to col for visibility 
+    geom_boxplot() +
+    geom_jitter()
+```
+]
+
+.pull-right[
+```{r box-with-jitter-plot, echo=FALSE, warning=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Area, col = Segment)) +
+    geom_boxplot() +
+    geom_jitter(aes(col = Segment))
+```
+]
+
+---
+
+.pull-left[
+```{r boring-box, warning=FALSE, echo=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Area)) +
+    geom_boxplot()
+```
+]
+
+.pull-right[
+```{r better-box, warning=FALSE, echo=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Area, 
+             col = Segment)) + # or col = Segment
+    geom_boxplot() +
+    geom_jitter()
+```
+]
+---
+
+.left-code[
+
+## Adding layers
+
+`r emo::ji("danger")` Make sure you add layers in an order that makes sense...
+
+```{r disorder-box, warning=FALSE, eval=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Area, 
+             col = Segment)) + # or col = Segment
+    geom_jitter() + #<<
+    geom_boxplot() #<<
+```
+]
+
+.right-plot[
+```{r disorder-box-out, warning=FALSE, echo=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Area, 
+             col = Segment)) + # or col = Segment
+    geom_jitter() + 
+    geom_boxplot() 
+```
+]
+
+---
+
+.left-code[
+## Scatter plots
+
+Good for relationships between numeric variables,
+
+like `total` number of artifacts by house pit `Area`:
+
+```{r scatter-plot, eval=FALSE}
+pits_data %>%
+  ggplot(aes(x = Area, y = total)) +
+    geom_point() # scatter plot
+```
+]
+
+.right-plot[
+```{r scatter-plot-out, echo=FALSE}
+pits_data %>%
+  ggplot(aes(x = Area, y = total)) +
+    geom_point() # scatter plot
+```
+]
+
+---
+
+.left-code[
+
+## Scatter plots
+
+Good for relationships between numeric variables,
+
+like `total` number of artifacts by house pit `Area`:
+
+Add groups?
+
+```{r scatter-plot-group, eval=FALSE}
+pits_data %>%
+  ggplot(aes(x = Area, y = total, 
+             col = Segment)) + #<<
+    geom_point() # scatter plot
+```
+]
+
+.right-plot[
+```{r scatter-plot-group-out, echo=FALSE}
+pits_data %>%
+  ggplot(aes(x = Area, y = total, 
+             col = Segment)) +
+    geom_point() # scatter plot
+```
+]
+
+---
+
+.left-code[
+## Scatter plots
+
+Printing in black and white?
+
+Colour deficient vision?
+
+```{r scatter-plot-shapes, eval=FALSE}
+pits_data %>%
+  ggplot(aes(x = Area, y = total, 
+             col = Segment, 
+             shape = Segment)) + #<<
+    geom_point() # scatter plot
+```
+
+Add `shape` to `aes`
+]
+
+.right-plot[
+```{r scatter-plot-shapes-out, echo=FALSE}
+pits_data %>%
+  ggplot(aes(x = Area, y = total, col = Segment, shape = Segment)) +
+    geom_point() # scatter plot
+```
+]
+
+---
+
+.left-code[
+## Scatter plots
+
+Printing in black and white?
+
+Colour deficient vision?
+
+```{r scatter-plot-size, eval=FALSE}
+pits_data %>%
+  ggplot(aes(x = Area, y = total, 
+             col = Segment, 
+             shape = Segment)) + 
+    geom_point(size = 1.5) #<<
+```
+
+Add `shape` to `aes`
+
+and you can increase the `size`
+
+`size` is outside `aes()` because we're not mapping a variable to it
+]
+
+.right-plot[
+```{r scatter-plot-size-out, echo=FALSE}
+pits_data %>%
+  ggplot(aes(x = Area, y = total, 
+             col = Segment, 
+             shape = Segment)) +
+    geom_point(size = 1.5)
+```
+]
+
+
+---
+
+.left-code[
+## Bar plots
+
+Good for categorical data
+
+```{r bar-plot-1, eval=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment)) + # no y-axis
+  geom_bar()
+```
+
+`geom_bar` counts the number of elements within the `Segment` variable,
+
+so here we're seeing number of house pits per segment.
+
+Not particularly interesting...
+]
+
+.right-plot[
+```{r bar-plot-1-out, echo=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment)) + # no y-axis
+  geom_bar()
+```
+]
+
+---
+
+.left-code[
+## Bar plots
+
+What about number of `Points` per `Segment`?
+
+We can just add `Points` as the y-axis, right?
+
+```{r points-bar, eval=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Points)) + ##<
+    geom_bar()
+```
+
+]
+
+--
+
+.right-plot[
+```{r points-bar-error, echo=FALSE}
+#message("## <error: That was of course a leading question>")
+errorCondition("That was of course a leading question")
+```
+]
+
+---
+
+.left-code[
+## Bar plots
+
+What about number of `Points` per `Segment`?
+
+We need to use `geom_col` if we have a variable on the y-axis.
+
+```{r points-col, eval=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Points)) +
+    geom_col() #<<
+```
+
+]
+
+--
+
+.right-plot[
+```{r points-col-out, echo=FALSE}
+pits_data %>%
+  ggplot(aes(x = Segment, y = Points)) +
+    geom_col()
+```
+]
+
+---
+
+## Bar plots
+
+What about number of `Ceramics` per segment?
+
+--
+
+And `Abraders`
+--
+, and `Discs`
+--
+, and `Earplugs`
+--
+, etc.
+
+---
+
+We need a way to easily separate by artifacts.
+
+--
+
+Luckily we already have a data frame that could be useful:
+
+--
+
+```{r pits-data-long}
+pits_data_long
+```
+
+---
+
+We just need to get rid of the `total` values:
+
+```{r}
+pits_data_long <- pits_data_long %>%
+  filter(artifact != "total")
+```
+
+--
+
+Because we don't want to include them in the `count`
+
+--
+
+(think about what would happen if we used `sum` on the `count` variable)
+
+---
+
+.left-code[
+## Visualising with long data
+
+Total artifacts per `Segment`.
+
+```{r stacked-bar, eval=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) + #<<
+    geom_col() +
+    scale_fill_viridis_d() #<<
+```
+
+Great! But we already know Segment 1 has more artifacts,
+
+and it's hard to see what's going on in 2 and 3.
+
+]
+
+.right-plot[
+```{r stacked-bar-out, echo=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col() +
+    scale_fill_viridis_d()
+```
+]
+
+---
+
+.left-code[
+## Visualising with long data
+
+Total artifacts per `Segment`.
+
+```{r stacked-bar2, eval=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) + #<<
+    geom_col() +
+    scale_fill_viridis_d() #<<
+```
+
+Great! But we already know Segment 1 has more artifacts,
+
+and it's hard to see what's going on in 2 and 3.
+
+]
+
+.right-plot[
+![](https://media.giphy.com/media/L2qukNXGjccyuAYd3W/giphy.gif)
+]
+
+---
+
+.pull-left[
+## Relative count bar plot
+
+To solve this issue, 
+
+we can calculate relative counts:
+
+```{r percent-artifacts-datf, eval=FALSE}
+pits_data_long %>%
+  group_by(Segment, artifact) %>%
+    summarise(count = sum(count, na.rm = T)) %>%
+    mutate(percent = count / sum(count) * 100)
+```
+]
+.pull-right[
+```{r percent-artifacts-datf-out, echo=FALSE}
+pits_data_long %>%
+  group_by(Segment, artifact) %>%
+    summarise(count = sum(count, na.rm = T)) %>%
+    mutate(percent = count / sum(count) * 100)
+```
+]
+---
+.left-code[
+## Relative count bar plot
+
+we can calculate relative counts:
+
+```{r relative-bar, eval=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col() +
+    scale_fill_viridis_d()
+```
+
+]
+
+.right-plot[
+```{r relative-bar-out, echo=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col() +
+    scale_fill_viridis_d()
+```
+]
+---
+
+.left-code[
+## Relative count bar plot
+
+And place it before the code for our plot:
+
+```{r relative-bar2, eval=FALSE}
+pits_data_long %>%
+  group_by(Segment, artifact) %>% #<<
+    summarise(count = sum(count, na.rm = T)) %>% #<<
+    mutate(percent = count / sum(count) * 100) %>% #<<
+  ggplot(aes(x = Segment, y = percent, 
+             fill = artifact)) +
+    geom_col() +
+    scale_fill_viridis_d()
+```
+
+Interesting...
+
+There are clear differences in the absolute number of artifacts between Segments,
+
+but the relative numbers are similar.
+
+]
+
+.right-plot[
+```{r relative-bar2-out, echo=FALSE}
+pits_data_long %>%
+  group_by(Segment, artifact) %>%
+  summarise(count = sum(count, na.rm = T)) %>%
+  mutate(percent = count / sum(count) * 100) %>%
+  ggplot(aes(x = Segment, y = percent, 
+             fill = artifact)) +
+    geom_col() +
+    scale_fill_viridis_d()
+```
+]
+---
+
+.left-code[
+## Relative count bar plot
+
+We can also use `geom_col(position = "fill")` to get relative counts,
+
+although with the previous method we could get a percentage.
+
+```{r relative-bar3, eval=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col(position = "fill") + #<<
+    scale_fill_viridis_d()
+```
+
+]
+
+.right-plot[
+```{r relative-bar3-out, echo=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col(position = "fill") +
+    scale_fill_viridis_d()
+```
+]
+
+---
+class: inverse
+
+## Exercise
+
+Use `geom_col(position = "dodge")` instead of `"fill"`.
+
+What are we seeing?  
+Compare to the bar with absolute counts. Is something off?
+
+---
+class: inverse
+
+.left-code[
+### Solution
+
+`position = "dodge"` puts `artifacts` side-by-side instead of stacking.
+
+The problem is that it can't deal with multiple `count` values (don't ask me why...)
+
+```{r dodge-issue, eval=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col(position = "dodge") + # alpha for transparency
+    scale_fill_viridis_d()
+```
+]
+
+.right-plot[
+```{r dodge-issue-out, echo=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col(position = "dodge") +
+    scale_fill_viridis_d()
+```
+]
+---
+class: inverse
+
+.left-code[
+### Solution
+
+`position = "dodge"` puts `artifacts` side-by-side instead of stacking.
+
+The problem is that it can't deal with multiple `count` values (don't ask me why...)
+
+So it superimposes multiple columns of the same artifact types:
+
+```{r dodge-issue2, eval=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col(position = "dodge", alpha = 0.4) + # alpha for transparency
+    scale_fill_viridis_d()
+```
+]
+
+.right-plot[
+```{r dodge-issue2-out, echo=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col(position = "dodge", alpha = 0.4) +
+    scale_fill_viridis_d()
+```
+]
+---
+
+## Cautionary tale
+
+Check the numbers in your data frame!
+
+![](https://media.giphy.com/media/Kper5bVx3Scfe/giphy.gif)
+
+---
+
+We could already see there was an issue with the `count` when comparing plots
+
+.pull-left[
+```{r stack-plot, echo=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col() +
+    scale_fill_viridis_d()
+```
+]
+
+.pull-right[
+```{r dodge-plot, echo=FALSE}
+pits_data_long %>%
+  ggplot(aes(x = Segment, y = count, 
+             fill = artifact)) +
+    geom_col(position = "dodge") +
+    scale_fill_viridis_d()
+```
+]
+
+---
+
+And a quick summary of artifacts could show us which plot was off:
+
+```{r summarise}
+pits_data_long %>%
+  group_by(Location, artifact) %>%
+  summarise(count = sum(count, na.rm = T))
+```
+
+---
+class: inverse
+
+## Exercise
+
+Find a way to use `geom_col(position = "dodge")`
+
+--
+
+`r emo::ji("bulb")` **Hint:** Create a summary data frame like we did for
+the relative bar plot.
+
+---
+class: inverse
+
+.left-code[
+### Solution
+
+```{r dodge-exercise, eval=FALSE}
+pits_data_long %>%
+  group_by(Segment, artifact) %>% #<<
+  summarise(count = sum(count, na.rm = T)) %>% #<<
+  ggplot(aes(x = Segment, y = count, fill = artifact)) +
+    geom_col(position = "dodge") +
+    scale_fill_viridis_d()
+```
+]
+
+.right-plot[
+```{r dodge-exercise-out, echo=FALSE}
+pits_data_long %>%
+  group_by(Segment, artifact) %>%
+  summarise(count = sum(count, na.rm = T)) %>%
+  mutate(percent = count / sum(count) * 100) %>%
+  ggplot(aes(x = Segment, y = count, fill = artifact)) +
+    geom_col(position = "dodge") +
+    scale_fill_viridis_d()
+```
+]
+
+---
+
+.left-code[
+## Prettification
+
+Now let's make it look a little nicer!
+
+Starting with relative counts:
+
+```{r dodge-relative, eval=FALSE}
+pits_data_long %>%
+  group_by(Segment, artifact) %>%
+  summarise(count = sum(count, na.rm = T)) %>% 
+  mutate(percent = count / sum(count) * 100) %>% #<<
+  ggplot(aes(x = Segment, y = percent, fill = artifact)) +
+    geom_col(position = "dodge") +
+    scale_fill_viridis_d()
+```
+]
+
+.right-plot[
+```{r dodge-relative-out, echo=FALSE}
+pits_data_long %>%
+  group_by(Segment, artifact) %>%
+  summarise(count = sum(count, na.rm = T)) %>%
+  mutate(percent = count / sum(count) * 100) %>%
+  ggplot(aes(x = Segment, y = percent, fill = artifact)) +
+    geom_col(position = "dodge") +
+    scale_fill_viridis_d()
+```
+]
+
+---
+
+## Prettification
+
+To make life easier, we can store the current plot
+
+```{r store-plot}
+my_little_plot <- pits_data_long %>%
+  group_by(Segment, artifact) %>%
+  summarise(count = sum(count, na.rm = T)) %>%
+  mutate(percent = count / sum(count) * 100) %>%
+  ggplot(aes(x = Segment, y = percent, fill = artifact)) +
+    geom_col(position = "dodge") +
+    scale_fill_viridis_d()
+```
+
+--
+
+And start customising
+
+---
+
+.left-code[
+## Prettification
+
+Flipping the axes increases readability (in my opinion)
+
+```{r pretty-plot4, eval=FALSE}
+my_little_plot +
+  coord_flip()
+```
+
+]
+
+.right-plot[
+```{r pretty-plot4-out, echo=FALSE}
+my_little_plot +
+  coord_flip()
+```
+]
+
+
+---
+
+.left-code[
+## Prettification
+
+We can change the background:
+
+```{r pretty-plot1, eval=FALSE}
+my_little_plot +
+  coord_flip() +
+  theme_minimal()
+```
+]
+
+.right-plot[
+```{r pretty-plot1-out, echo=FALSE}
+my_little_plot +
+  coord_flip() +
+  theme_minimal()
+```
+]
+
+---
+
+.left-code[
+## Prettification
+
+Let's fix the `lab`els
+
+```{r pretty-plot2, eval=FALSE}
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+  labs(x = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot")
+```
+
+]
+
+.right-plot[
+```{r pretty-plot2-out, echo=FALSE}
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+  labs(x = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot")
+```
+]
+
+---
+
+.left-code[
+## Prettification
+
+We can use `theme` to make changes to specific elements
+
+such as font size
+
+```{r pretty-plot-font, eval=FALSE}
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+  labs(x = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot") +
+  theme(plot.title = element_text(size = 20))
+```
+
+]
+
+.right-plot[
+```{r pretty-plot-font-out, echo=FALSE}
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+   labs(x = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot") +
+  theme(plot.title = element_text(size = 20))
+```
+]
+
+---
+
+.left-code[
+## Prettification
+
+We can use `theme` to make changes to specific elements
+
+and alignment
+
+```{r pretty-plot-align, eval=FALSE}
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+  labs(y = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot") +
+  theme(plot.title = element_text(size = 20, 
+                                  hjust = 0.5))
+```
+
+]
+
+.right-plot[
+```{r pretty-plot-align-out, echo=FALSE}
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+   labs(y = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot") +
+  theme(plot.title = element_text(size = 20, 
+                                  hjust = 0.5))
+```
+]
+
+---
+
+.pull-left[
+## Prettification
+
+We can use `theme` to make changes to specific elements
+
+we can remove elements with `element_blank`, like unnecessary gridlines
+
+```{r pretty-plot-line, eval=FALSE}
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank()) +
+  labs(y = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot") +
+  theme(plot.title = element_text(size = 20, 
+                                  hjust = 0.5),
+        panel.grid.major = element_blank())
+```
+
+]
+
+.pull-right[
+```{r pretty-plot-line-out, echo=FALSE}
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank()) +
+  labs(y = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot") +
+  theme(plot.title = element_text(size = 20, 
+                                  hjust = 0.5),
+        panel.grid.major = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+]
+
+---
+
+And much MUCH more...
+
+--
+
+```{r}
+args(theme)
+```
+
+---
+
+.pull-left[
+
+### Before
+
+```{r plot-before, echo=FALSE}
+my_little_plot
+```
+]
+
+.pull-right[
+
+### After
+
+```{r plot-after, echo=FALSE}
+my_little_plot +
+  coord_flip() +
+  theme_minimal() +
+  labs(y = "Proportion of artifacts (%)",
+      fill = "Artifact",
+      title = "My awesome plot") +
+  theme(plot.title = element_text(size = 20, 
+                                  hjust = 0.5),
+        panel.grid.major = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+]
+
+---
+class: center
+
+![](https://media.giphy.com/media/3ohzAhuS5LMbnuJEt2/giphy.gif)
+

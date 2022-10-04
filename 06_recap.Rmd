@@ -1,0 +1,992 @@
+---
+title: "The Skeletons of Guildhall Yard"
+subtitle: "A statistical analysis of sexual dimorphism"
+author: ""
+faculty: "Archaeology"
+date: "QuantArch Week 7 | 21-03-2022"
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js # for offline usage
+    css: [assets/css/extra.css, assets/css/leiden.css, assets/css/leiden-fonts.css]
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: ""
+---
+class: middle, title-slide, inverse
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(broom)
+knitr::opts_chunk$set(message = FALSE,
+                      warning = FALSE,
+                      fig.path = "assets/06_recap_files/")
+metric_data_raw <- readr::read_delim("assets/data/MGY_metrics.lst", delim = "|")
+faculty_cols <- data.frame(faculty = c("Social & Behavioural Sciences", "Science",
+                                       "Humanities", "Archaeology", 
+                                       "Governance and Global Affairs", "Medicine",
+                                       "Law"),
+                           colour = c("#be1908", "#f46e32", "#aaad00", "#2c712d",
+                                      "#34a3a9", "#5cb1eb", "#b02079"))
+
+m1 <- match(faculty_cols$faculty, rmarkdown::metadata$faculty)
+m1 <- !is.na(m1)
+accent_col <- faculty_cols$colour[m1]
+# xaringanthemer::style_xaringan(text_bold_color = accent_col, 
+#                                outfile = "assets/css/extra.css")
+colorize <- function(x, color) {
+    sprintf("<span style='color: %s;'>%s</span>", color, x)
+}
+```
+
+
+.title-left[
+# `r rmarkdown::metadata$title`
+
+### `r rmarkdown::metadata$subtitle`
+
+#### `r rmarkdown::metadata$date`
+]
+
+---
+layout: true
+class: middle
+<div class='footer'>
+<span>Discover the world at Leiden University</span>
+<img src='assets/img/logo.png' width=82 />
+</div>
+---
+class: inverse
+
+```{r echo=FALSE}
+xaringanExtra::use_progress_bar(color = "#2c712d")
+```
+
+<!-- Start a new project from scratch
+        - New RStudio project
+        - Upload data
+        - summary frames
+        - visualise data
+        - check assumptions
+        - two-sample test -->
+
+## Let's start over
+
+---
+
+## RStudio project
+
+Create a new RStudio project
+
+Project: > New Project > New Directory > New Project
+
+Call it **guildhall-yard_analysis**
+
+--
+
+`r emo::ji("danger")` Do NOT nest R Projects inside other R Projects `r emo::ji("danger")`
+
+--
+
+Now let's organise the project with folders called `data`, `scripts`, and `figures`.
+
+```{r eval=FALSE}
+sapply(c("data", "scripts", "figures"), dir.create)
+```
+
+---
+
+## Project data
+
+The data we'll use for this project are from the [Wellcome Osteological Research Database](https://www.museumoflondon.org.uk/collections/other-collection-databases-and-libraries/centre-human-bioarchaeology/osteological-database)
+
+specifically bone measurements
+
+Download the data to the `data` folder
+
+```{r eval=FALSE}
+download.file(
+  url = "https://www.museumoflondon.org.uk/application/files/1414/6132/6617/MGY_metrics.lst", 
+  destfile = here("data/MGY_metrics.lst"),
+  mode = "wb"
+  )
+```
+
+and the metadata (also to the `data` folder)
+
+```{r eval=FALSE}
+download.file(
+  url = "https://www.museumoflondon.org.uk/application/files/6514/7308/7527/RapidMethodRecordingManual.pdf", 
+  destfile = here("data/metadata.pdf"),
+  mode = "wb")
+```
+
+---
+
+## Data upload
+
+Now that we have the data in our project folder, we can open a new script
+
+File > New File > R Script
+
+Save the script as `01-data_cleaning` in the `scripts` folder ([Ctrl] + [S] or [Cmd] + [S])
+
+--
+
+At the top of the script we load the necessary packages
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+---
+
+## Data upload
+
+Now that we have the data in our project folder, we can open a new script
+
+File > New File > R Script
+
+Save the script as `01-data_cleaning` in the `scripts` folder ([Ctrl] + [S] or [Cmd] + [S])
+
+then upload our data
+
+```{r eval=FALSE}
+library(tidyverse)
+library(here)
+
+# Upload data
+metric_data_raw <- readr::read_delim(here("data/MGY_metrics.lst")) #<<
+```
+
+---
+class: inverse
+
+## Data cleaning
+
+---
+
+## Data cleaning
+
+Let's take a look at the data
+
+```{r eval=FALSE}
+view(metric_data_raw)
+```
+
+--
+
+```{r echo=FALSE}
+knitr::kable(metric_data_raw)
+```
+
+---
+
+## Data cleaning
+
+For our analysis we are interested in the variables `CONTEXT`, `SEX`, `GROUP`, `EXPANSION` and `VALUE`.
+
+Use the metadata PDF to see what these are
+
+--
+
+```{r}
+metric_data_cleaned <- metric_data_raw %>%
+  select(CONTEXT, SEX, GROUP, EXPANSION, VALUE)
+```
+
+---
+
+## Data cleaning
+
+Now we can get a better overview
+
+```{r}
+str(metric_data_cleaned)
+```
+
+---
+
+## Data cleaning
+
+It looks like something is wrong with `VALUE`
+
+It should be numeric, but the `|` at the end of each number is converting it to a string
+
+--
+
+We can remove all `|`s with the `str_remove` function from the **stringr** package (loaded with tidyverse)
+
+```{r}
+args(str_remove)
+```
+
+--
+
+The argument `string` requires an input vector (i.e. `VALUE`)
+
+and `pattern` requires the pattern to look for (i.e. `|`)
+
+---
+
+## Data cleaning
+
+The default for `pattern` is a regex expression
+--
+, but that's a separate course in itself...
+
+--
+
+For now we'll use the `coll` function to give it the value we want to remove
+
+```{r}
+metric_data_cleaned <- metric_data_raw %>%
+  select(CONTEXT, SEX, GROUP, EXPANSION, VALUE) %>%
+  mutate(VALUE = str_remove( #<<
+    string = VALUE, #<<
+    pattern = coll("|") #<<
+  ))
+```
+
+--
+
+The regex expression method would be `str_remove(VALUE, "\\|")`
+
+---
+
+.left[
+## Data cleaning
+
+We are only interested in individuals with a
+determined sex.
+]
+```{r echo=FALSE, out.width=800, fig.align='center', fig.cap="Allison Horst", fig.alt="Cartoon showing three fuzzy monsters either selecting or crossing out rows of a data table. If the type of animal in the table is 'otter' and the site is 'bay', a monster is drawing a purple rectangle around the row. If those conditions are not met, another monster is putting a line through the column indicating it will be excluded. Stylized text reads 'dplyr::filter() - keep rows that satisfy your conditions.'"}
+knitr::include_graphics("assets/img/dplyr_filter.jpg")
+```
+
+---
+class: inverse
+
+## Exercise
+
+We are only interested in individuals with a determined sex (`r emo::ji("bulb")` take a look at the metadata PDF).
+
+Add the code to our existing code pipe
+
+```{r eval=FALSE}
+metric_data_cleaned <- metric_data_raw %>%
+  select(CONTEXT, SEX, GROUP, EXPANSION, VALUE) %>%
+  mutate(VALUE = str_remove(
+    string = VALUE, 
+    pattern = coll("|")
+  ))
+```
+
+---
+class: inverse
+
+## Exercise
+
+### Solution
+
+```{r}
+metric_data_cleaned <- metric_data_raw %>%
+  select(CONTEXT, SEX, GROUP, EXPANSION, VALUE) %>%
+  mutate(VALUE = str_remove(
+    string = VALUE,
+    pattern = coll("|")
+  )) %>% 
+  filter(SEX != "UNDETERMINABLE",
+         SEX != "UNSEXED CHILD")
+```
+
+---
+
+## Data cleaning
+
+That should do it for now
+
+Let's export the data
+
+```{r eval=FALSE}
+readr::write_csv(metric_data_cleaned, here("data/MGY_metrics_cleaned.csv"))
+```
+
+```{r include=FALSE}
+readr::write_csv(metric_data_cleaned, here("assets/data/MGY_metrics_cleaned.csv"))
+```
+
+---
+background-image: url(assets/img/dplyr_wrangling.png)
+background-position: right
+background-size: 70%
+
+## Data wrangling
+
+```{r include=FALSE}
+metric_data <- readr::read_csv(here("assets/data/MGY_metrics_cleaned.csv"))
+```
+
+---
+
+## Data wrangling
+
+Open a new R Script and save it as `02-data_analysis`
+
+--
+
+Then we add the required packages and data upload to the script
+
+```{r eval=FALSE}
+library(tidyverse)
+library(here)
+
+# Upload data
+metric_data <- readr::read_csv(here("data/MGY_metrics_cleaned.csv"))
+```
+
+---
+
+## Data wrangling
+
+We're going to focus on `Post-Cranial` measurements.
+
+```{r}
+post_cranial <- metric_data %>%
+  filter(GROUP == "Post-Cranial")
+```
+
+
+Let's take a look at the `EXPANSION` variable
+
+```{r}
+post_cranial$EXPANSION
+```
+
+---
+
+## Data wrangling
+
+It looks like the side the measurement was taken on is hidden within this variable. Not very convenient.
+
+--
+
+To make life easier, we will create a new column with side of measurement.
+
+Here, the `case_when` function will come in handy.
+
+---
+background-image: url(assets/img/dplyr_case_when.png)
+background-position: 100% 24%
+background-size: 70%
+class: bottom
+
+## Data wrangling
+
+We can make a statement such as 
+
+*"When the value of EXPANSION contains an 'R', then RIGHT. When the value of EXPANSION contains 'L', then LEFT. When it contains neither, *`NA`"
+
+<br>
+
+---
+
+## Data wrangling
+
+*"When the value of EXPANSION contains an 'R' at the end of the string, then RIGHT. When the value of EXPANSION contains 'L', then LEFT. When it contains neither, *`NA`"
+
+```{r eval=FALSE}
+case_when(
+    str_detect(EXPANSION, "[R]$") ~ "RIGHT",
+    str_detect(EXPANSION, "[L]$") ~ "LEFT"))
+```
+
+`NA` will be returned if there is no match.
+
+---
+
+.left-code[
+## Data wrangling
+
+*"When the value of EXPANSION contains an 'R' at the end of the string, then RIGHT. When the value of EXPANSION contains 'L', then LEFT. When it contains neither, *`NA`"
+
+`r emo::ji("bulb")` regex `[\\sR]$` = match an R preceeded by whitespace (`\\s`) at end of string (`$`).
+
+```{r eval=FALSE}
+post_cranial %>%
+  mutate(
+    SIDE = case_when(
+      str_detect(EXPANSION, "[\\sR]$") ~ "RIGHT",
+      str_detect(EXPANSION, "[\\sL]$") ~ "LEFT"
+    )
+  )
+```
+]
+
+--
+
+.right-plot[
+```{r echo=FALSE}
+post_cranial %>%
+  mutate(SIDE = case_when(
+    str_detect(EXPANSION, "[\\sR]$") ~ "RIGHT",
+    str_detect(EXPANSION, "[\\sL]$") ~ "LEFT"
+    )
+  ) %>%
+  knitr::kable() %>%
+  kableExtra::column_spec(column = 6, background = "yellow")
+```
+]
+
+---
+
+.left-code[
+## Data wrangling
+
+Now we just need to clean up the `EXPANSION` variable by `str_remove`ing the isolated L's and R's, and `str_trim`ming the whitespace.
+
+```{r eval=FALSE}
+post_cranial %>%
+  mutate(
+    SIDE = case_when(
+      str_detect(EXPANSION, "[\\sR]$") ~ "RIGHT",
+      str_detect(EXPANSION, "[\\sL]$") ~ "LEFT"
+    ),
+    EXPANSION = str_remove(EXPANSION, "[\\sRL]$"), #<<
+    EXPANSION = str_trim(EXPANSION) #<<
+  )
+```
+]
+--
+.right-plot[
+```{r echo=FALSE}
+post_cranial %>%
+  mutate(SIDE = case_when(
+    str_detect(EXPANSION, "[\\sR]$") ~ "RIGHT",
+    str_detect(EXPANSION, "[\\sL]$") ~ "LEFT"
+    ),
+    EXPANSION = str_remove(EXPANSION, "[\\sRL]$"),
+    EXPANSION = str_trim(EXPANSION)
+  ) %>%
+  knitr::kable() %>% 
+  kableExtra::column_spec(column = 4, background = "yellow")
+```
+]
+
+---
+
+.left-code[
+## Data wrangling
+
+To increase our sample size, we're going to combine all `FEMALE(?)` and `MALE(?)` estimates.
+
+*"When SEX is FEMALE?, then FEMALE. When SEX is MALE?, then MALE. Everything else stays as is."*
+
+```{r eval=FALSE}
+post_cranial %>%
+  mutate(
+    SIDE = case_when(
+      str_detect(EXPANSION, "[\\sL]$") ~ "LEFT",
+      str_detect(EXPANSION, "[\\sR]$") ~ "RIGHT"
+    ),
+    EXPANSION = str_remove(EXPANSION, "[\\sLR]$"),
+    EXPANSION = str_trim(EXPANSION),
+    COMB_SEX = case_when( #<<
+      SEX == "FEMALE?" ~ "FEMALE", #<<
+      SEX == "MALE?" ~ "MALE", #<<
+      TRUE ~ SEX #<<
+    )
+  )
+```
+]
+--
+.right-plot[
+```{r echo=FALSE}
+post_cranial %>%
+  mutate(
+    SIDE = case_when(
+    str_detect(EXPANSION, "[\\sL]$") ~ "LEFT",
+    str_detect(EXPANSION, "[\\sR]$") ~ "RIGHT"
+    ),
+    EXPANSION = str_remove(EXPANSION, "[\\sLR]$"),
+    EXPANSION = str_trim(EXPANSION),
+    COMB_SEX = case_when(
+      SEX == "FEMALE?" ~ "FEMALE",
+      SEX == "MALE?" ~ "MALE",
+      TRUE ~ SEX
+    )
+  ) %>% 
+  knitr::kable() %>%
+  kableExtra::column_spec(column = 7, background = "yellow")
+```
+]
+
+---
+
+## Data wrangling
+
+We're only interested in using a single measurement from each individual
+--
+, and we currently have two measurements for some
+--
+, and one for others.
+
+--
+
+So, we're going to take all the `RIGHT` measurements
+--
+, and only use `LEFT` if there is no `RIGHT`, for each skeletal element.
+
+--
+
+```{r}
+post_cranial <- post_cranial %>%
+  mutate(SIDE = case_when(
+    str_detect(EXPANSION, "[\\sL]$") ~ "LEFT",
+    str_detect(EXPANSION, "[\\sR]$") ~ "RIGHT"
+    ),
+    EXPANSION = str_remove(EXPANSION, "[\\sLR]$"),
+    EXPANSION = str_trim(EXPANSION),
+    COMB_SEX = case_when(
+      SEX == "FEMALE?" ~ "FEMALE",
+      SEX == "MALE?" ~ "MALE",
+      TRUE ~ SEX)) %>%
+  group_by(EXPANSION, CONTEXT) %>% #<<
+  slice(which(SIDE == "LEFT" || SIDE == "RIGHT")) #<<
+```
+
+`r emo::ji("bulb")` The `||` makes sure the condition is satisfied at the first instance, meaning it stops looking after it encounters one of either `LEFT` or `RIGHT`.
+
+---
+class: inverse
+
+## Break
+
+---
+class: inverse
+
+## Data exploration
+
+---
+
+.left-code[
+## Data exploration
+
+Let's `summarise` the data, looking at the `mean` values of males and females,
+
+and throw in `n` and `sd`, too
+
+```{r eval=FALSE}
+post_cranial %>%
+  group_by(COMB_SEX) %>% 
+  summarise(n = n(),
+            mean = mean(VALUE),
+            sd = sd(VALUE))
+```
+]
+
+--
+
+.right-plot[
+```{r echo=FALSE}
+post_cranial %>%
+  group_by(EXPANSION, COMB_SEX) %>% 
+  summarise(n = n(),
+            mean = mean(VALUE),
+            sd = sd(VALUE)) %>%
+  knitr::kable()
+```
+]
+
+---
+
+.left-code[
+## Data exploration
+
+We can also visualise this
+
+```{r eval=FALSE}
+post_cranial %>%
+  ggplot(aes(x = EXPANSION, 
+             y = VALUE, 
+             fill = COMB_SEX)) +
+    geom_violin()
+```
+]
+--
+.right-plot[
+```{r bad-viz, echo=FALSE}
+post_cranial %>%
+  ggplot(aes(x = EXPANSION, 
+             y = VALUE, 
+             fill = COMB_SEX)) +
+    geom_violin()
+```
+]
+
+---
+
+.left-code[
+## Data exploration
+
+We can also visualise this
+
+```{r eval=FALSE}
+post_cranial %>%
+  ggplot(aes(x = EXPANSION, 
+             y = VALUE, 
+             fill = COMB_SEX)) +
+    geom_violin()
+```
+]
+
+.right-plot[
+![](https://media.giphy.com/media/WQy9FkJlhGSwl3eQ5V/giphy.gif)
+]
+
+---
+
+## Data exploration
+
+Maybe we should break it into multiple plots...
+
+--
+
+Instead of creating separate plots for each skeletal element,
+
+--
+
+we can use `facet_wrap` from **ggplot**.
+
+--
+
+This allows us to specify a variable to separate the plots.
+
+```{r eval=FALSE}
+post_cranial %>%
+  ggplot(aes(x = COMB_SEX, #<<
+             y = VALUE, 
+             fill = COMB_SEX)) +
+    geom_violin() +
+    facet_wrap(~ EXPANSION, scales = "free_y") #<<
+```
+
+`r emo::ji("bulb")` `scales = "free_y"` adjusts the scale for each individual plot, instead of all the y-axes being the same.
+
+---
+
+```{r femur-facet-wrap, echo=FALSE, fig.width=16, fig.height=9, fig.align='center'}
+post_cranial %>%
+  ggplot(aes(x = COMB_SEX, 
+             y = VALUE, 
+             fill = COMB_SEX)) +
+    geom_violin() +
+    facet_wrap(~ EXPANSION, scales = "free_y") +
+    theme(axis.text.x = element_blank(),
+          axis.ticks.x = element_blank())
+```
+
+---
+class: inverse
+
+## Data analysis
+
+---
+
+## Data analysis: two-sample t test
+
+Let's look at the difference between males and females within Femoral Head width `FeHD`.
+
+--
+
+```{r}
+femoral_head_split <- post_cranial %>%
+  filter(EXPANSION == "FeHD") %>%
+  group_by(COMB_SEX) %>%
+  group_split()
+```
+
+--
+
+`femoral_head_split` is a list of two data frames. `[[1]]` is the female data frame and `[[2]]` is the male.
+
+--
+
+Now we can run our `t.test`
+
+--
+
+```{r eval=FALSE}
+t.test(femoral_head_split[[1]]$VALUE, femoral_head_split[[2]]$VALUE)
+```
+
+---
+
+Wait...
+--
+ are we violating any of the t test assumptions?
+
+---
+
+## Testing assumptions
+
+T-test assumptions:
+
+--
+
+- Independence of observations
+
+--
+
+- Normally(ish) distributed
+
+--
+
+- Homogeneity of variances
+
+--
+
+- Random sampling
+
+---
+
+## Testing assumptions: Independence of observations
+
+Each measurement is taken from an individual skeleton
+--
+ `r emo::ji("check")`
+ 
+---
+
+.pull-left[
+## Normally distributed
+
+Best option is to visualise
+
+```{r sample-dist, eval=FALSE}
+post_cranial %>%
+  filter(EXPANSION == "FeHD") %>%
+  ggplot(aes(x = VALUE, fill = COMB_SEX)) +
+    geom_density(alpha = 0.5)
+```
+]
+--
+.pull-right[
+```{r echo=FALSE}
+post_cranial %>%
+  filter(EXPANSION == "FeHD") %>%
+  ggplot(aes(x = VALUE, fill = COMB_SEX)) +
+    geom_density(alpha = 0.5)
+```
+]
+
+---
+
+## Testing assumptions: Normally distributed
+
+Or we can run a `shapiro`-Wilk test
+--
+, null hypothesis is that the sample is normally distributed
+
+--
+
+```{r}
+shapiro.test(femoral_head_split[[1]]$VALUE)
+shapiro.test(femoral_head_split[[2]]$VALUE)
+```
+
+--
+
+Normally distributed... 
+--
+ `r emo::ji("check")`
+
+---
+
+## Testing assumptions: Homogeneity of variances
+
+We assume homogeneity of sample variances.
+
+--
+
+In other words
+--
+, do the two samples have a similar variance?
+
+--
+
+Again, visualisation can be useful
+
+---
+
+.pull-left[
+## Testing assumptions: Homogeneity of variances
+
+Homogeneity of variances.
+
+In other words, do the two samples have a similar variance?
+
+Again, visualisation can be useful
+
+```{r eval=FALSE}
+post_cranial %>% 
+  filter(EXPANSION == "FeHD") %>%
+  ggplot(aes(x = COMB_SEX, y = VALUE, fill = COMB_SEX)) +
+    geom_boxplot() +
+    geom_jitter()
+```
+
+]
+
+--
+.pull-right[
+```{r echo=FALSE}
+post_cranial %>% 
+  filter(EXPANSION == "FeHD") %>%
+  ggplot(aes(x = COMB_SEX, y = VALUE, fill = COMB_SEX)) +
+    geom_boxplot() +
+    geom_jitter()
+```
+]
+
+---
+
+## Testing assumptions: Homogeneity of variances
+
+Or we can use a `leveneTest` from the **car** package.
+
+--
+
+The `leveneTest` `y`-argument can take a formula.
+
+--
+
+Formulas are variables separated by the tilde, `~`.
+--
+ For example `x ~ y`
+ 
+--
+
+The `leveneTest` formula is `variable ~ group`
+--
+, so for us: `VALUE ~ COMB_SEX`
+
+--
+
+The null hypothesis is that the variances are equal
+
+--
+
+```{r}
+post_cranial %>%
+  filter(EXPANSION == "FeHD") %>%
+  car::leveneTest(y = VALUE ~ COMB_SEX)
+```
+--
+
+Homogeneity of variances... 
+--
+ `r emo::ji("check")`
+
+---
+.left[
+## Testing assumptions: Random sampling
+
+Were the samples drawn from a random sample?
+]
+--
+.center[
+![](https://media.giphy.com/media/58FDuiRsLPfmpd1U6X/giphy-downsized-large.gif)
+]
+---
+
+## Testing assumptions
+
+T-test assumptions:
+
+- Independence of observations 
+- Normally(ish) distributed
+- Homogeneity of variances
+- Random sampling
+
+---
+
+## Testing assumptions
+
+T-test assumptions:
+
+- Independence of observations `r emo::ji("check")`
+- Normally(ish) distributed `r emo::ji("check")`
+- Homogeneity of variances `r emo::ji("check")`
+- Random sampling
+
+---
+
+## Testing assumptions
+
+T-test assumptions:
+
+- Independence of observations `r emo::ji("check")`
+- Normally(ish) distributed `r emo::ji("check")`
+- Homogeneity of variances `r emo::ji("check")`
+- Random sampling (probably close enough...) `r emo::ji("shrug")`
+
+---
+
+## Two-sample t test
+
+```{r include=FALSE}
+t_test <- t.test(femoral_head_split[[2]]$VALUE, femoral_head_split[[1]]$VALUE, var.equal = T) %>%
+  tidy()
+```
+
+NOW we can run our test.
+
+--
+
+with `var.equal = TRUE` (equal variances; if not equal => `FALSE`)
+
+--
+
+```{r}
+t.test(femoral_head_split[[2]]$VALUE, femoral_head_split[[1]]$VALUE, var.equal = T)
+```
+
+---
+
+.pull-left[
+.middle[
+## Reporting
+
+The mean femoral head width of males (m = `r signif(t_test$estimate1,3)`) is
+`r signif(t_test$estimate,3)` mm larger than the mean
+of females (m = `r signif(t_test$estimate2,3)`),
+*t*(`r t_test$parameter`) = `r round(t_test$statistic,2)`, *p* < 0.001,
+95%CI(`r paste(signif(c(t_test$conf.low, t_test$conf.high), 3), sep = ",")`).
+]
+]
+
+.pull-right[
+```{r sex-dim-plot, echo=FALSE}
+post_cranial %>% 
+  filter(EXPANSION == "FeHD") %>%
+  ggplot(aes(x = COMB_SEX, y = VALUE, fill = COMB_SEX)) +
+    geom_boxplot(alpha = 0.3) +
+    geom_jitter(aes(col = COMB_SEX), height = 0.2, width = 0.2) +
+    scale_fill_viridis_d() +
+    scale_colour_viridis_d() +
+    labs(y = "Femoral head width (mm)",
+         fill = "", col = "") +
+    theme_minimal() +
+    theme(axis.title.x = element_blank(),
+          axis.text.x = element_blank(),
+          axis.title.y = element_text(size = 16),
+          legend.text = element_text(size = 14),
+          panel.grid.major.x = element_blank())
+```
+]
